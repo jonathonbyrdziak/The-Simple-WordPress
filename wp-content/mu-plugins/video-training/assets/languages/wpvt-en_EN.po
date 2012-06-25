@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Video Training Dashboard Widget\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-03 13:09+0100\n"
+"PO-Revision-Date: 2011-08-03 13:09+0100\n"
+"Last-Translator: Scott Evans\n"
+"Language-Team: @scottssweb <hi@scott.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: /Volumes/toggle/dropbox/web/framework-wordpress/wp-content/plugins/video-training/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: assets/inc/wpvt-widget.php:10
+msgid "The Dashboard"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:10
+msgid "An introduction to the WordPress administration panel and dashboard."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:11
+msgid "Creating a new Post"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:11
+msgid "This video will walk you through the use of the WordPress post/blog function."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:12
+msgid "Editing a Post"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:12
+msgid "How to edit a post once it has been created."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:13
+msgid "Categories &amp; Tags"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:13
+msgid "Using categories and tags to organise your blog posts."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:14
+msgid "Creating &amp; Editing Pages"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:14
+msgid "A introduction to WordPress pages."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:15
+msgid "Add Photos &amp; Images"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:15
+msgid "Spice up your posts and pages with photos and images."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:16
+msgid "How to Embed Video"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:16
+msgid "Adding video to your site from popular sites such as YouTube."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:17
+msgid "Using the Media Library"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:17
+msgid "Keeping your media library clean and general file management."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:18
+msgid "Managing Comments"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:18
+msgid "Learn to know your spam from your ham."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:19
+msgid "How to Create a Link"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:19
+msgid "Creating links using the rich text editor."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:20
+msgid "Changing the Theme"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:20
+msgid "Tired of your site looking the same? Change your theme."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:21
+msgid "Adding Widgets"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:21
+msgid "Managing and adding widgets to your website."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:22
+msgid "Building Custom Menus"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:22
+msgid "Add and remove items from your websites navigation."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:23
+msgid "Installing Plugins"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:23
+msgid "Plugins allow you to easily add new functionality to your website"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:24
+msgid "Adding New Users"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:24
+msgid "Managing users and permissions."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:25
+msgid "Useful Tools"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:25
+msgid "Helpful little extras within WordPress."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:26
+msgid "Configuration Settings"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:26
+msgid "Managing your website settings."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:41
+msgid "Settings"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:42
+msgid "Support"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:43
+msgid "Twitter"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:72
+msgid "Video Tutorials"
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:106
+msgid "The <a href=\"http://wp.tutsplus.com/tutorials/wp101-video-training-part-1-the-dashboard/\" title=\"WPtuts+ WP101 tutorial series\">WPtuts+ WP101 tutorial series</a> will guide you through everything you need to know about WordPress. If your new to WordPress we recommend taking the time to watch these training videos."
+msgstr ""
+
+#: assets/inc/wpvt-widget.php:130
+msgid "Choose the tutorials that are suitable for your website:"
+msgstr ""
+

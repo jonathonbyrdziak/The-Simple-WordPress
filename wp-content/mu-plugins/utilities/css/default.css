@@ -1,0 +1,172 @@
+/*
+Theme Name: White
+Theme URI: http://redrokk.com/
+Description: Simple White Theme
+Author: the redrokk team
+Version: 1.3
+License: GNU General Public License
+License URI: license.txt
+Tags: white, blue, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu
+*/
+
+
+/* =Reset default browser CSS. 
+-------------------------------------------------------------- */
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+a img {border: none;}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar{width:9px;height:9px;}
+::-webkit-scrollbar-button:start:decrement,#doc ::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
+::-webkit-scrollbar-track-piece{background-color:#FAFAFA;-webkit-border-radius:0;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-radius:8px;}
+::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:8px;}
+::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:8px;}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+
+.clear, .clearfix, .clearFix {display:block;clear:both;width:100%;}
+.right {float:right;position:relative;}
+.left {float:left;position:relative;}
+
+/* Push footer */
+.wrapper {margin: 0 auto -4em;}
+.centered, #login {margin: auto auto;}
+
+/* Standard Widths */
+.w500, #login {width:500px;}
+.w650 {width:650px;}
+.w1000 {width:1000px;}
+
+.w1p {width:100%;}
+.w2p {width:50%;}
+.w3p {width:33%;}
+.w4p {width:25%;}
+.w5p {width:20%;}
+.w6p {width:16.5%;}
+.w7p {width:14%;}
+.w8p {width:12.5%;}
+.w9p {width:11%;}
+.w10p {width:10%;}
+
+/* Wordpress Styles */
+.login-remember, .login-submit, #reg_passmail, #login .submit {margin:0;padding: 2px 0 0 0;}
+#s, #user_login, #user_pass {width:300px;}
+#login {margin-top:100px;}
+#registerform p {margin:0;padding:10px 0 0;}
+
+#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { padding-bottom: 10px; }
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tbody .pad { background: none; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+
+/* Paddings */
+.pt20 {padding-top:20px;}
+.mt20 {margin-top:20px;}
+.mb20 {margin-bottom:20px;}
+
+/* Basics *//*
+body {font-family: Arial,Helvetica,Serif;font-size: 13px;color: #666;}
+p { color: #858585; line-height: 1.5em;overflow: hidden;clear: both;margin-top: 15px;margin-bottom: 12px;padding-top: 5px;padding-bottom: 5px;}
+h1 { font-family: Tahoma, Geneva, sans-serif; margin-top: 10px; font-weight: normal; margin-bottom: 20px; color: #666;font-size: 26px; font-family: Tahoma, Geneva, sans-serif; font-weight: normal; letter-spacing: -2px;}
+
+h1 {font-size: 36px;letter-spacing: -3px;font-family: Tahoma, Geneva, sans-serif;color: #333;margin-bottom: 19px;margin: 0px;font-weight: bold;}
+h1 span { font-weight: normal;}
+h1 a {text-decoration:none;color:#333;}
+h2 {margin-bottom:15px;}
+h4 {font-weight:bold;}
+*/
+
+.error,
+.alert,
+.notice,
+.approved,
+.attention {padding: 15px;border-radius: 6px;color: #444;}
+.approved {border: 1px solid #C1E8C1;background: #D1EED1;}
+.attention {background: #FDF5D9;border: 1px solid #FCEEC1;}
+.notice, .message {background: #DDF4FB;border: 1px solid #C8EEF9;}
+.alert {background: #FDDFDE;border: 1px solid #FBC9C8;}
+.error {background:#e84c29;border: 1px solid #d33915;color:#000;}
+
+.error,
+.alert,
+.notice,
+.approved,
+.approved,
+.notice, 
+.message,
+.alert,
+.error,
+.attention{color: #858585; line-height: 1.5em;overflow: hidden;clear: both;margin-top: 15px;margin-bottom: 12px;padding-top: 5px;padding-bottom: 5px;text-indent:10px;}
+
+blockquote {font: italic 16px / 22px ;padding: 5px 0 0 35px;background: url('images/quote-l.png') 0 0 no-repeat;}
+pre.lines {overflow: auto;padding: 17px 15px;margin-bottom: 15px;font-size: 11px;line-height: 17px;cursor: text;background: #EAEAEA url('images/pre-lines.png') 50% 0;border: 0;color: #333;}
+
+.text-icon{display:inline-block;line-height:20px;font-size:110%;background-repeat:no-repeat;padding-left:24px}
+span.email,span.phone,span.quote,span.cart,span.rss,span.tags,span.write,span.info,span.sound,.email li,.phone li,.quote li,.cart li,.rss li,.tags li,.write li,.info li,.sound li{background-image:url('images/icon-set1.png')}
+span.rightarrow,span.leftarrow,span.circlearrow,span.downarrow,span.uparrow,span.person,span.calendar,span.doc,span.bulb,.rightarrow li,.leftarrow li,.circlearrow li,.downarrow li,.uparrow li,.person li,.calendar li,.doc li,.bulb li{background-image:url('images/icon-set2.png')}
+span.twitter,span.youtube,span.skype,span.facebook,span.like,span.video,span.dropbox,span.vimeo,span.paypal,.twitter li,.youtube li,.skype li,.facebook li,.like li,.video li,.dropbox li,.vimeo li,.paypal li{background-image:url('images/icon-set3.png')}
+.text-icon.email,.text-icon.rightarrow,.text-icon.twitter,.email li,.rightarrow li,.twitter li{background-position:0 4px}
+.text-icon.phone,.text-icon.leftarrow,.text-icon.youtube,.phone li,.leftarrow li,.youtube li{background-position:0 -296px}
+.text-icon.quote,.text-icon.circlearrow,.text-icon.skype,.quote li,.circlearrow li,.skype li{background-position:0 -596px}
+.text-icon.cart,.text-icon.downarrow,.text-icon.facebook,.cart li,.downarrow li,.facebook li{background-position:0 -896px}
+.text-icon.rss,.text-icon.uparrow,.text-icon.like,.rss li,.uparrow li,.like li{background-position:0 -1196px}
+.text-icon.tags,.text-icon.person,.text-icon.video,.tags li,.person li,.video li{background-position:0 -1496px}
+.text-icon.write,.text-icon.calendar,.text-icon.dropbox,.write li,.calendar li,.dropbox li{background-position:0 -1796px}
+.text-icon.info,.text-icon.doc,.text-icon.vimeo,.info li,.doc li,.vimeo li{background-position:0 -2096px}
+.text-icon.sound,.text-icon.bulb,.text-icon.paypal,.sound li,.bulb li,.paypal li{background-position:0 -2396px}
+.checkbox li{background-image:url('images/checkbox.png')}
+
+.list-icon li {list-style: none;padding: 0 0 0 24px;margin: 0 0 5px 0;background-repeat: no-repeat;}
+ul.horizontal {list-style: none;padding:0;margin:0;}
+ul.horizontal li {display:inline;float:left;padding:0 5px 0 5px;margin:0;}
+
+/* Boxes */
+/*
+.greybox {background:#EFEFEF;border:1px solid #CECFD0;padding: 20px;}
+.greybox .avatar {padding-right:10px;float:left;}
+*/
+
+/* Forms */
+/*
+input.submit, button, input#searchsubmit, input.button-primary  {line-height: 15px;border: 0;font-size: 9px;text-transform: uppercase;color: #fff;cursor: pointer;vertical-align: middle;background-color: #1B1B1B;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;height: 32px;margin: 0 7px 0px 0px;padding: 5px 8px 5px 8px;}
+input.submit:hover, button:hover, input#searchsubmit:hover, input.button-primary:hover { text-decoration: underline; background-color: #333333;}
+label {text-transform: uppercase;font-weight: bold;color: #555;margin-right: 10px;vertical-align: middle;clear: both;display:block;}
+input {background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;vertical-align: middle;clear: both;}
+input:focus, textarea:focus { background-color: #F2F2F2; border: 1px solid #999999;}
+*/
+
+/* LayerSlider Styles */
+/*
+.ls-inner {position: relative;}
+.ls-inner,.ls-layer {width: 100%;height: 100%;overflow: hidden;}
+.ls-layer {position: absolute;display: none;background-position: center center;}
+.ls-active,.ls-animating {display: block !important;}
+.ls-layer > * {position: absolute;left: 0px;top: 0px;}
+.ls-layer .ls-bg {left: 50%;top: 50%;}
+.ls-nav {text-align: center;}
+.ls-nav a {display: inline-block;}
+*/
+		
+/* Fonts */
+/*
+@font-face {
+    font-family: 'Skolar Italic';
+    src: url('http://f.fontdeck.com/f/1/V1J5ckszTGMABpqY5NH9UowEPDBgu7V/I/cpU/oXj4lPxJrEJCUCrXX9fTUfg7//+Gy/B7ibjHb3lw.eot');
+    src: url('http://f.fontdeck.com/f/1/V1J5ckszTGMABpqY5NH9UowEPDBgu7V/I/cpU/oXj4lPxJrEJCUCrXX9fTUfg7//+Gy/B7ibjHb3lw.eot?') format('embedded-opentype'),
+    url('http://f.fontdeck.com/f/1/V1J5ckszTGMABpqY5NH9UowEPDBgu7V/I/cpU/oXj4lPxJrEJCUCrXX9fTUfg7//+Gy/B7ibjHb3lw.woff') format('woff'),
+    url('http://f.fontdeck.com/f/1/V1J5ckszTGMABpqY5NH9UowEPDBgu7V/I/cpU/oXj4lPxJrEJCUCrXX9fTUfg7//+Gy/B7ibjHb3lw.ttf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+*/
+

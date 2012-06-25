@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AntiVirus\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Sergej Müller\n"
+"Language-Team: Sergej Müller\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Virus suspected"
+msgstr "Virusverdacht"
+
+msgid "AntiVirus for WordPress"
+msgstr "AntiVirus für WordPress"
+
+msgid "requires at least WordPress 2.8"
+msgstr "benötigt WordPress 2.8"
+
+msgid "Last check"
+msgstr "Zuletzt"
+
+msgid "View line"
+msgstr "Zeige Zeile"
+
+msgid "There is no virus"
+msgstr "Als 'Kein Virus' markieren"
+
+msgid "Scan finished"
+msgstr "Prüfung abgeschlossen"
+
+msgid "Enable the daily antivirus scan"
+msgstr "Tägliche AntiVirus-Prüfung durchführen"
+
+msgid "Alternate email address"
+msgstr "Alternative E-Mail-Adresse"
+
+msgid "Completed scan"
+msgstr "Durchgeführte Prüfung"
+
+msgid "Permalink back door check"
+msgstr "Check auf das Sicherheitsrisiko im Permalink"
+
+msgid "http://mashable.com/2009/09/05/wordpress-attack/"
+msgstr "http://blog.wordpress-deutschland.org/2009/09/05/aeltere-wordpress-versionen-ziel-von-angriffen.html"
+
+msgid "Manual scan"
+msgstr "Manuelle Prüfung"
+
+msgid "Scan the theme templates now"
+msgstr "Theme-Templates jetzt prüfen"
+
+msgid "The daily antivirus scan of your blog suggests alarm."
+msgstr "Die tägliche AntiVirus-Prüfung des Blogs schlägt Alarm."
+
+msgid "All clear"
+msgstr "Verdachtlos"
+
+msgid "Danger"
+msgstr "Gefahr"
+
+msgid "Flattr plugin"
+msgstr "Plugin flattern"
+
+msgid "Follow on Google+"
+msgstr "Auf Google+ folgen"
+
+msgid "Security solution as a smart, effectively plugin to protect your blog against exploits and spam injections."
+msgstr "Kostenfreie Sicherheitslösung als Plugin zur Früherkennung und Warnung vor bösartigen Injektionen in Theme-Templates."
+
+msgid "Notify message by AntiVirus for WordPress"
+msgstr "Benachrichtigung von AntiVirus für WordPress"
+
+msgid "http://wpantivirus.com"
+msgstr "http://wpantivirus.de"
+

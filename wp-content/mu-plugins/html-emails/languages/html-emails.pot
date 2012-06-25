@@ -1,0 +1,191 @@
+# Translation of the WordPress plugin HTML Emails 0.2 by Mohammad Jangda.
+# Copyright (C) 2010 Mohammad Jangda
+# This file is distributed under the same license as the HTML Emails package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: HTML Emails 0.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/html-emails\n"
+"POT-Creation-Date: 2010-05-05 03:53+0000\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: includes/emails.php:21
+#, php-format
+msgid "New %s on your post"
+msgstr ""
+
+#. translators: 1: post title, 2: post id
+#: includes/emails.php:23 includes/emails.php:91
+#, php-format
+msgid "<em>%1$s</em> #%2$s"
+msgstr ""
+
+#. translators: 1: blog name, 2: comment type, 3: post title
+#: includes/emails.php:39
+#, php-format
+msgid "[%1$s] %2$s: \"%3$s\""
+msgstr ""
+
+#: includes/emails.php:89
+#, php-format
+msgid "New %s awaiting approval"
+msgstr ""
+
+#. translators: 1: blog name, 2: post title
+#: includes/emails.php:107
+#, php-format
+msgid "[%1$s] Please moderate: \"%2$s\""
+msgstr ""
+
+#: includes/emails.php:133
+#, php-format
+msgid "[%s] Password Changed"
+msgstr ""
+
+#: includes/emails.php:172
+#, php-format
+msgid "[%s] New User Registration"
+msgstr ""
+
+#: includes/emails.php:196
+#, php-format
+msgid ""
+"Hello %s. Your account has been created and is ready. Your login information "
+"is below! Happy WordPress-ing!"
+msgstr ""
+
+#: includes/emails.php:213
+#, php-format
+msgid "[%s] Your username and password"
+msgstr ""
+
+#: includes/utils.php:113
+msgid "Trackback"
+msgstr ""
+
+#: includes/utils.php:116
+msgid "Pingback"
+msgstr ""
+
+#: includes/utils.php:120
+msgid "Comment"
+msgstr ""
+
+#. translators: 1: email date, 2: email time
+#: templates/html_email.php:37
+#, php-format
+msgid "This email was sent by WordPress on %1$s at %2$s"
+msgstr ""
+
+#. translators: 1: user display name, 2: site name
+#: templates/new_user_admin.php:5
+#, php-format
+msgid "A new user (%1$s) has registered on your site: %2$s"
+msgstr ""
+
+#: templates/new_user_admin.php:15 templates/new_user_user.php:15
+#: templates/password_change_admin.php:14
+msgid "Username: "
+msgstr ""
+
+#: templates/new_user_admin.php:19 templates/password_change_admin.php:18
+msgid "Email: "
+msgstr ""
+
+#: templates/new_user_admin.php:28 templates/password_change_admin.php:27
+msgid "Edit User"
+msgstr ""
+
+#: templates/new_user_admin.php:29 templates/password_change_admin.php:28
+msgid "See All Users"
+msgstr ""
+
+#: templates/new_user_user.php:19
+msgid "Password: "
+msgstr ""
+
+#: templates/new_user_user.php:28
+msgid "Login"
+msgstr ""
+
+#: templates/new_user_user.php:29
+msgid "Edit Profile"
+msgstr ""
+
+#: templates/new_user_user.php:36
+msgid "Contact Administrator"
+msgstr ""
+
+#: templates/notify_comment.php:16
+#, php-format
+msgid "(whois: %s)"
+msgstr ""
+
+#: templates/notify_comment.php:38
+msgid "Actions you can take:"
+msgstr ""
+
+#: templates/notify_comment.php:46
+msgid "Approve"
+msgstr ""
+
+#: templates/notify_comment.php:50
+msgid "Trash"
+msgstr ""
+
+#: templates/notify_comment.php:52
+msgid "Delete"
+msgstr ""
+
+#: templates/notify_comment.php:55
+msgid "Spam"
+msgstr ""
+
+#: templates/notify_comment.php:57
+#, php-format
+msgid "See all %ss"
+msgstr ""
+
+#: templates/notify_comment.php:62
+#, php-format
+msgid "Currently <strong>%s</strong> comment is waiting for approval."
+msgid_plural "Currently <strong>%s</strong> comments are waiting for approval."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/notify_comment.php:64
+msgid "Visit moderation panel"
+msgstr ""
+
+#: templates/password_change_admin.php:4
+msgid "The password was reset and changed for the following user:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "HTML Emails"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (HTML Emails 0.2)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  plugin.pot (HTML Emails 0.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://digitalize.ca"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Converts the default fugly plain text email notifications into fully "
+"customizable, sweet lookin' HTML emails."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mohammad Jangda"
+msgstr ""

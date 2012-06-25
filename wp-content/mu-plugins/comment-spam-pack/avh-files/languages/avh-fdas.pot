@@ -1,0 +1,874 @@
+# Translation of the WordPress plugin AVH First Defense Against Spam - WPMU DEV Version 1.0 by Ulrich Sossou.
+# Copyright (C) 2010 Ulrich Sossou
+# This file is distributed under the same license as the AVH First Defense Against Spam - WPMU DEV Version package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AVH First Defense Against Spam - WPMU DEV Version 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-06 16:02+0100\n"
+"PO-Revision-Date: 2011-09-06 16:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: Incsub <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\avh\\wp-content\\mu-plugins\n"
+"X-Poedit-SearchPath-0: avh-files/class\n"
+"X-Poedit-SearchPath-1: avh-files/plugins\n"
+"X-Poedit-SearchPath-2: avh-files/plugins/forms\n"
+
+#: avh-files/class/avh-fdas.admin.php:70
+msgid "Overview"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:71
+#: avh-files/class/avh-fdas.admin.php:433
+msgid "General Options"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:72
+#: avh-files/class/avh-fdas.admin.php:614
+msgid "3rd Party Options"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:86
+msgid "Statistics"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:123
+msgid "AVH First Defense Against Spam - WPMU DEV Version - Overview"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:152
+msgid "Spam Statistics"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:172
+#, php-format
+msgid "Spam stopped in %s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:178
+msgid "No statistics yet"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:190
+msgid "Stop Forum Spam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:195
+msgid " and "
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:196
+msgid "Project Honey Pot"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:198
+#, php-format
+msgid "Checking with %s %s %s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:202
+msgid "IP Cache Statistics"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:208
+msgid "disabled"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:209
+#: avh-files/class/avh-fdas.admin.php:213
+#, php-format
+msgid "IP caching is %s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:212
+msgid "enabled"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:234
+#: avh-files/class/avh-fdas.admin.php:241
+#: avh-files/class/avh-fdas.admin.php:248
+msgid "IP"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:234
+#: avh-files/class/avh-fdas.admin.php:241
+#: avh-files/class/avh-fdas.admin.php:248
+msgid "IP's"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:235
+#, php-format
+msgid "Total of %s in the cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:242
+#, php-format
+msgid "Total of %s classified as clean"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:249
+#, php-format
+msgid "Total of %s classified as spam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:266
+msgid "General"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:267
+msgid "IP Caching"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:268
+msgid "Cron"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:269
+msgid "Blacklist"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:270
+msgid "Whitelist"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:294
+msgid "Show message"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:294
+msgid "Show a message when the connection has been terminated."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:295
+msgid "Email on failed security check:"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:295
+msgid "Receive an email when a comment is posted and the security check failed."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:297
+msgid "Email result of nonces clean up"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:297
+msgid "Receive an email with the total number of nonces that are deleted. The nonces are used to secure the links found in the emails."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:298
+msgid "Email result of IP cache clean up"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:298
+msgid "Receive an email with the total number of IP's that are deleted from the IP caching system."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:300
+msgid "Use internal blacklist"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:300
+msgid "Check the internal blacklist first. If the IP is found terminate the connection, even when the Termination threshold is a negative number."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:301
+msgid "Blacklist IP's:"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:301
+msgid "Each IP should be on a separate line<br />Ranges can be defines as well in the following two formats<br />IP to IP. i.e. 192.168.1.100-192.168.1.105<br />Network in CIDR format. i.e. 192.168.1.0/24"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:303
+msgid "Use internal whitelist"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:303
+msgid "Check the internal whitelist first. If the IP is found don\\t do any further checking."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:304
+msgid "Whitelist IP's"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:304
+msgid "Each IP should be on a seperate line<br />Ranges can be defines as well in the following two formats<br />IP to IP. i.e. 192.168.1.100-192.168.1.105<br />Network in CIDR format. i.e. 192.168.1.0/24"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:306
+msgid "Use IP Caching"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:306
+msgid "Cache the IP's that meet the 3rd party termination threshold and the IP's that are not detected by the 3rd party. The connection will be terminated if an IP is found in the cache that was perviously determined to be a spammer"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:307
+msgid "Email "
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:307
+msgid "Send an email when a connection is terminate based on the IP found in the cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:308
+msgid "Days to keep in cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:308
+msgid "Keep the IP in cache for the selected days."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:372
+#: avh-files/class/avh-fdas.admin.php:589
+msgid "Options saved"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:381
+#, php-format
+msgid "IP [%s] Reported and deleted"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:385
+#, php-format
+msgid "IP [%s] has been added to the blacklist"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:389
+#, php-format
+msgid "IP [%s] reported."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:393
+msgid "Invalid request."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:397
+#, php-format
+msgid "IP [%s] not reported. Probably already processed."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:401
+#, php-format
+msgid "IP [%s] already exists in the blacklist."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:454
+#: avh-files/class/avh-fdas.admin.php:635
+msgid "Save Changes"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:491
+msgid "To use IP caching you must enable it below and set the options. IP's are stored in the database so if you have a high traffic website the database can grow quickly"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:501
+msgid "Once a day cron jobs of this plugin run. You can select to receive an email with additional information about the jobs that ran."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:536
+msgid "Check with Stop Forum Spam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:536
+msgid "If checked, the visitor's IP will be checked with Stop Forum Spam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:537
+msgid "Email threshold"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:537
+msgid "When the frequency of the spammer in the stopforumspam database equals or exceeds this threshold an email is send.<BR />A negative number means an email will never be send."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:538
+msgid "Email Project Honey Pot Info"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:538
+msgid "Always email Project Honey Pot info when Stop Forum Spam email threshold is reached, disregarding the email threshold set for Project Honey Pot. This only works when you select to check with Project Honey Pot as well."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:539
+msgid "Termination threshold"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:539
+msgid "When the frequency of the spammer in the stopforumspam database equals or exceeds this threshold the connection is terminated.<BR />A negative number means the connection will never be terminated.<BR /><strong>This option will always be the last one checked.</strong>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:540
+msgid "API Key"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:540
+msgid "You need a Stop Forum Spam API key to report spam."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:541
+msgid "Email error"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:541
+msgid "Receive an email when the call to Stop Forum Spam Fails"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:543
+msgid "Check with Honey Pot Project"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:543
+msgid "If checked, the visitor's IP will be checked with Honey Pot Project"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:544
+msgid "API Key:"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:544
+msgid "You need a Project Honey Pot API key to check the Honey Pot Project database."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:545
+msgid "Email type threshold:"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:545
+msgid "Search Engine/Suspicious/Harvester/Suspicious & Harvester/Comment Spammer/Suspicious & Comment Spammer/Harvester & Comment Spammer/Suspicious & Harvester & Comment Spammer"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:545
+msgid "When the type of the spammer in the Project Honey Pot database equals or exceeds this threshold an email is send.<BR />Both the type threshold and the score threshold have to be reached in order to receive an email."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:546
+msgid "Email score threshold"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:546
+msgid "When the score of the spammer in the Project Honey Pot database equals or exceeds this threshold an email is send.<BR />A negative number means an email will never be send."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:547
+msgid "Termination type threshold"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:547
+msgid "Never/Search Engine/Suspicious/Harvester/Suspicious & Harvester/Comment Spammer/Suspicious & Comment Spammer/Harvester & Comment Spammer/Suspicious & Harvester & Comment Spammer"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:547
+msgid "When the type of the spammer in the Project Honey Pot database equals or exceeds this threshold an email is send.<br />Both the type threshold and the score threshold have to be reached in order to termnate the connection. "
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:548
+msgid "Termination score threshold"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:548
+msgid "When the score of the spammer in the Project Honey Pot database equals or exceeds this threshold the connection is terminated.<BR />A negative number means the connection will never be terminated.<BR /><strong>This option will always be the last one checked.</strong>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:549
+msgid "Use Honey Pot"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:549
+msgid "If you have set up a Honey Pot you can select to have the text below to be added to the message when terminating the connection.<BR />You have to select <em>Show Message</em> in the General Options for this to work."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:550
+msgid "Honey Pot URL"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:550
+msgid "The link to the Honey Pot as suggested by Project Honey Pot."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:586
+msgid "You can not use Project Honey Pot without an API key. Use of Project Honey Pot has been disabled"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:646
+msgid "To check a visitor at Stop Forum Spam you must enable it below. Set the options to your own liking."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:657
+msgid "To check a visitor at Project Honey Pot you must enable it below, you must also have an API key. You can get an API key by signing up for free at the <a href=\"http://www.projecthoneypot.org/create_account.php\" target=\"_blank\">Honey Pot Project</a>. Set the options to your own liking."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:669
+msgid ""
+"\n"
+"<p><b>Why is there an IP caching system?</b></p>\n"
+"<p>Stop Forum spam has set a limit on the amount of API calls you can make a day, currently it is set at 5000 calls a day.<br>\n"
+"This means that if you don't use the Blacklist and/or Whitelist you are limited to 5000 visits/day on your site.</p>\n"
+"<p>The following IP's are cached locally:</p>\n"
+"<ul>\n"
+"\t<li>Every IP identified as spam and triggering the terminate-the-connection threshold.</li>\n"
+"\t<li>Every clean IP.</li>\n"
+"</ul>\n"
+"<p>Only returning IP's that were previously identified as spammer and who's connection was terminated will update their last seen date in the caching system.<br>\n"
+"Every day, once a day, a routine runs to remove the IP's who's last seen date is X amount of days older than the date the routine runs. You can set the days in the adminstration section of the plugin.<br>You can check the statistics to see how many IP's are in the database. If you have a busy site, with a lot of unique visitors, you might have to play with the \"Days to keep in cache\" setting to keep the size under control.</p>\n"
+"\n"
+"<p><b>In what order is an IP checked and what action is taken?</b></p>\n"
+"<p>The plugin checks the visiting IP in the following order, only if that feature is enabled of course.</p>\n"
+"<ul>\n"
+"\t<li>Whitelist - If found skip the rest of the checks.</li>\n"
+"\t<li>Blacklist - If found terminate the connection.</li>\n"
+"\t<li>IP Caching - If found and spam terminate connection, if found and clean skip the rest of the checks.</li>\n"
+"\t<li>3rd Parties - If found determine action based on result.</li>\n"
+"</ul>\n"
+"\n"
+"<p><b>How do I define a range in the blacklist or white list?</b></p>\n"
+"<p>You can define two sorts of ranges:</p>\n"
+"<ul>\n"
+"\t<li>From IP to IP. i.e. 192.168.1.100-192.168.1.105</li>\n"
+"\t<li>A network in CIDR format. i.e. 192.168.1.0/24</li>\n"
+"</ul>\n"
+"\n"
+"<p><b>How do I report a spammer to Stop Forum Spam?</b></p>\n"
+"<p>You need to have an API key from Stop Forum Spam. If you do on the Edit Comments pages there is an extra option called, Report &amp; Delete, in the messages identified as spam.</p>\n"
+"\n"
+"<p><b>How do I get a Stop Forum Spam API key?</b></p>\n"
+"<p>You will have to sign up on their site, <a href=\"http://www.stopforumspam.com/signup\" target=\"_blank\">http://www.stopforumspam.com/signup</a>.</p>\n"
+"\n"
+"<p><b>How do I get a Project Honey Pot API key?</b></p>\n"
+"<p>You will have to sign up on their site, <a href=\"http://www.projecthoneypot.org/create_account.php\" target=\"_blank\">http://www.projecthoneypot.org/create_account.php</a>.</p>\n"
+"\n"
+"<p><b>What are some score examples for Project Honey Pot?</b></p>\n"
+"<p>The Threat Rating is a logarithmic score -- much like the Richter's scale for measuring earthquakes.A Threat Rating of 25 can be interpreted as the equivalent of sending 100 spam messages to a honey pot trap.</p>\n"
+"<table class=\"widefat\">\n"
+"\t<tbody>\n"
+"\t\t<tr>\n"
+"\t\t\t<th>Threat Rating</th>\n"
+"\t\t\t<th>IP that is as threatening as one that has sent</th>\n"
+"\t\t</tr>\n"
+"\t\t<tr>\n"
+"\t\t\t<td>25</td>\n"
+"\t\t\t<td>100 spam messages</td>\n"
+"\t\t</tr>\n"
+"\t\t<tr>\n"
+"\t\t\t<td>50</td>\n"
+"\t\t\t<td>10,000 spam messages</td>\n"
+"\t\t</tr>\n"
+"\t\t<tr>\n"
+"\t\t\t<td>75</td>\n"
+"\t\t\t<td>1,000,000 spam messages</td>\n"
+"\t\t</tr>\n"
+"\t</tbody>\n"
+"</table>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:770
+msgid "Settings"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:787
+msgid "Report & Delete"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:805
+msgid "Oops, no comment with this ID."
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:805
+msgid "Go back"
+msgstr ""
+
+#: avh-files/class/avh-fdas.admin.php:808
+msgid "You are not allowed to edit comments on this post."
+msgstr ""
+
+#: avh-files/class/avh-fdas.core.php:4
+msgid "You are not allowed to call this page directly."
+msgstr ""
+
+#: avh-files/class/avh-fdas.core.php:116
+msgid "Undocumented"
+msgstr ""
+
+#: avh-files/class/avh-fdas.core.php:116
+msgid "Miscellaneous"
+msgstr ""
+
+#: avh-files/class/avh-fdas.core.php:326
+msgid "Unsuccesfull response from SFS"
+msgstr ""
+
+#: avh-files/class/avh-fdas.core.php:330
+msgid "Unknown response from stopforumspam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:77
+msgid "Cron - Clean nonces"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:78
+#, php-format
+msgid "Deleted %d nonce's from the database"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:99
+msgid "Cron - Clean IP cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:100
+#, php-format
+msgid "Deleted %d IP's from the cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:125
+#, php-format
+msgid "[%s] AVH First Defense Against Spam - WPMU DEV Version - Comment security check failed"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:127
+msgid "Reason:\tThe nonce check failed."
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:129
+msgid "Reason:\tAn attempt was made to directly access wp-comment-post.php"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:131
+#, php-format
+msgid "Username:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:132
+#, php-format
+msgid "Email:\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:133
+#: avh-files/class/avh-fdas.public.php:367
+#, php-format
+msgid "IP:\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:134
+msgid "Comment trying to post:"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:135
+msgid "--- START OF COMMENT ---"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:137
+msgid "--- END OF COMMENT ---"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:146
+#, php-format
+msgid "Report spammer: %s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:148
+#: avh-files/class/avh-fdas.public.php:541
+#, php-format
+msgid "For more information: http://www.stopforumspam.com/search?q=%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:151
+#: avh-files/class/avh-fdas.public.php:602
+#: avh-files/class/avh-fdas.public.php:672
+#, php-format
+msgid "Add to the local blacklist: %s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:165
+msgid "<p>Cheating huh</p>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:166
+#: avh-files/class/avh-fdas.public.php:635
+#: avh-files/class/avh-fdas.public.php:686
+msgid "<p>Protected by: AVH First Defense Against Spam - WPMU DEV Version</p>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:364
+#, php-format
+msgid "[%s] AVH First Defense Against Spam - WPMU DEV Version - Error detected"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:365
+msgid "An error has been detected"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:366
+#, php-format
+msgid "Error:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:368
+#: avh-files/class/avh-fdas.public.php:524
+#: avh-files/class/avh-fdas.public.php:664
+#, php-format
+msgid "Accessing:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:369
+#: avh-files/class/avh-fdas.public.php:533
+#, php-format
+msgid "Call took:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:371
+#, php-format
+msgid "Debug:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:521
+#: avh-files/class/avh-fdas.public.php:661
+#, php-format
+msgid "[%s] AVH First Defense Against Spam - WPMU DEV Version - Spammer detected [%s]"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:523
+#: avh-files/class/avh-fdas.public.php:663
+#, php-format
+msgid "Spam IP:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:529
+msgid "Checked at Stop Forum Spam"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:530
+#: avh-files/class/avh-fdas.public.php:552
+msgid "Information"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:531
+#, php-format
+msgid "Last Seen:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:532
+#, php-format
+msgid "Frequency:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:536
+#, php-format
+msgid "Threshold (%s) reached. Connection terminated"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:539
+#: avh-files/class/avh-fdas.public.php:545
+msgid "Stop Forum Spam has no information"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:551
+msgid "Checked at Project Honey Pot"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:553
+#, php-format
+msgid "Days since last activity:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:582
+#, php-format
+msgid "Type:\t\t\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:584
+#, php-format
+msgid "Search Engine:\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:586
+#, php-format
+msgid "Score:\t\t\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:588
+#, php-format
+msgid "Call took:\t\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:591
+#, php-format
+msgid "Threshold score (%s) and type (%s) reached. Connection terminated"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:594
+msgid "Project Honey Pot has no information"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:631
+#, php-format
+msgid "<h1>Access has been blocked.</h1><p>Your IP [%s] is registered in our <em>Blacklisted</em> database.<BR /></p>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:633
+#, php-format
+msgid "<h1>Access has been blocked.</h1><p>Your IP [%s] is registered in the Stop Forum Spam or Project Honey Pot database.<BR />If you feel this is incorrect please contact them</p>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:666
+msgid "IP exists in the cache"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:667
+#, php-format
+msgid "Check took:\t\t\t%s"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:685
+#, php-format
+msgid "<h1>Access has been blocked.</h1><p>Your IP [%s] has been identified as spam</p>"
+msgstr ""
+
+#: avh-files/class/avh-fdas.public.php:703
+#, php-format
+msgid "Your blog is protected by AVH First Defense Against Spam - WPMU DEV Version v%s"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.forms.php:19
+msgid "Yes"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.forms.php:22
+msgid "No"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:18
+msgid "Full"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:19
+msgid "Compact"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:22
+msgid "Red"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:23
+msgid "White"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:24
+msgid "Black glass"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:25
+msgid "Clean"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:28
+msgid "Appearance:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.recaptcha.forms.php:47
+msgid "ReCAPTCHA protection is enabled by default. If you set this option, your comments will <b>NOT</b> be protected by ReCAPTCHA challenge."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:18
+msgid "Spam Filter protection is enabled by default. If you set this option, your comments will <b>NOT</b> be protected by Spam Filter."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:23
+msgid "Enabling this option will restrict access to per-blog Spam Filter comments page to Super Admins"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:30
+msgid "Separate words by comma. You can add as many as you want."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:31
+msgid "Disable words blacklist protection:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:36
+msgid "By default, comments that contain one or more words listed above will be rejected."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:43
+msgid "Allow this many links in your comments"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:44
+msgid "Disable link count protection:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.spam_filter.forms.php:49
+msgid "By default, comments that contain more links then set above will be rejected."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:18
+msgid "Trackback Validation protection is enabled by default. If you set this option, your trackbacks will <b>NOT</b> be checked."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:23
+msgid "If you set this option, the IPs of trackback sender and trackback webserver will <b>NOT</b> be checked against each other."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:28
+msgid "Strict check:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:30
+msgid "If you set this option, the trackback source page will have to include the actual permalink to your post."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:35
+msgid "List of allowed URLs:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:37
+msgid "If you did not enable strict checks, you can enter a list of accepted (&quot;close enough&quot;) URLs here."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:38
+msgid "E.g. if you enter <code>http://www.example.com</code>, the trackback source page can include e.g. <code>http://www.example.com</code> or <code>http://www.example.com/my-page</code>."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:39
+msgid "Separate multiple URLs with a comma."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:42
+msgid "Disable remote checks:"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:44
+msgid "If you set this option, the trackback source page will <b>NOT</b> be checked at all."
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:50
+msgid "Reject them entirely"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:51
+msgid "Flag them as spam"
+msgstr ""
+
+#: avh-files/plugins/avh-fdas.trackback.forms.php:52
+msgid "Hold them for moderation"
+msgstr ""
+
+#: avh-files/plugins/forms/recaptcha_settings.php:2
+msgid "ReCaptcha"
+msgstr ""
+
+#: avh-files/plugins/forms/spam_filter_comments.php:3
+#: avh-files/plugins/forms/spam_filter_settings.php:2
+msgid "Spam Filter"
+msgstr ""
+
+#: avh-files/plugins/forms/trackback_settings.php:2
+msgid "Trackback Validation"
+msgstr ""
+

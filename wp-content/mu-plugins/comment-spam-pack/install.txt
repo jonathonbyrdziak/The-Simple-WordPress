@@ -1,0 +1,21 @@
+Plugin Name: Comment Spam Pack
+Author: Andrew Billits & Ulrich Sossou
+
+Files:
+----------------------------------------------------------------------
+All files goes in /wp-content/mu-plugins
+
+Instructions:
+----------------------------------------------------------------------
+1) Download the plugin zip
+2) Unzip comment-spam-pack-1.zip from within the plugin zip
+3) Upload the contents on 'Comment spam pack' to wp-content/mu-plugins/
+(NB, do not upload the folder itself, just the contents)
+
+To edit the captcha words:
+----------------------------------------------------------------------
+1) Open custom_anti_spam.php
+2) Scroll to line 40
+3) Edit / add words as appropriate
+
+2104-1340424462

@@ -1,0 +1,248 @@
+/*
+Theme Name: Xebax
+Description: Used to style the TinyMCE editor.
+*/
+* {
+	color: #444;
+	font-family: Georgia, "Bitstream Charter", serif;
+	line-height: 1.5;
+}
+.coll{border: 1px dotted #c1c1c1;}
+.coll > *{
+	padding: 0px 15px 0px ;
+}
+img.mceWPclear{
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin: 0px 0px 10px;
+	padding: 0;
+	clear: both;
+}
+.normal-two-columns{
+	float: left;
+	padding: 0px 0px 0px;
+	margin: 0 4% 0 0;
+	width: 45%;
+}
+.normal-two-columns.right{
+	margin: 0px 0px 0px 0px!important;
+}
+
+.normal-fourth-columns{
+	float: left;
+	padding: 0px 0px 0px;
+	margin: 0 4% 0 0;
+	width: 21%;
+}
+.normal-fourth-columns.right{
+	margin: 0px 0px 0px 0px!important;
+}
+
+.normal-three-columns{
+	float: left;
+	padding: 0px 0px 0px;
+	margin: 0 5% 0 0;
+	width: 29%;
+}
+.normal-three-columns.right{
+	margin: 0px 0px 0px 0px!important;
+}
+.one_third{
+	float:left; 
+	width: 29%; 
+	margin: 0 5% 0 0; 
+	padding: 0px 0px 0px;
+}
+.one_third_last{
+	float:left;
+	width: 29%; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px;
+}
+.two_third_last{
+	float: left; 
+	width: 64%; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px;
+}
+.two_third{
+	float: left; 
+	width: 64%; 
+	margin: 0 5% 0 0; 
+	padding: 0px 0px 0px; 
+}
+.one_fourth{
+	float: left;
+	width: 21%; 
+	margin: 0 4% 0 0; 
+	padding: 0px 0px 0px; 
+}
+.three_fourth_last{
+	float: left;
+	width: 73%; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px;
+}
+.three_fourth{
+	float: left; 
+	width: 73%; 
+	margin: 0 4% 0 0; 
+	padding: 0px 0px 0px;
+}
+.two_fourth{
+	float: left; 
+	width: 47%; 
+	margin: 0 4% 0 0; 
+	padding: 0px 0px 0px;
+	}
+.two_fourth_last{
+	float: left; 
+	width: 47%; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px;
+}
+.one_fourth_last{
+	float: left; 
+	width: 21%; 
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 0px;
+}
+
+/* list style */
+ul.list_arrow, ul.list_delete, ul.list_document,
+ul.list_gear, ul.list_heart, ul.list_help,
+ul.list_label, ul.list_pencil, ul.list_plus,
+ul.list_tick, ul.list_trash, ul.list_warning{
+	list-style-type: none;
+	padding: 0px 0px 0px;
+	margin-left: 0;
+}
+ul.list_arrow li, ul.list_delete li, ul.list_document li,
+ul.list_gear li, ul.list_heart li, ul.list_help li,
+ul.list_label li, ul.list_pencil li, ul.list_plus li,
+ul.list_tick li, ul.list_trash li, ul.list_warning li{
+	margin-left: 0px;
+	padding: 4px 0px 4px 25px;
+	list-style-type: none;
+}
+
+ul.list_arrow li{
+	background: url(../images/lists/arrow.png) scroll 0px 6px no-repeat;
+}
+ul.list_delete li{
+	background: url(../images/lists/delete.png) scroll 0px 6px no-repeat;
+}
+ul.list_document li{
+	background: url(../images/lists/document.png) scroll 0px 6px no-repeat;
+}
+ul.list_gear li{
+	background: url(../images/lists/gear.png) scroll 0px 6px no-repeat;
+}
+ul.list_heart li{
+	background: url(../images/lists/heart.png) scroll 0px 6px no-repeat;
+}
+ul.list_help li{
+	background: url(../images/lists/help.png) scroll 0px 6px no-repeat;
+}
+ul.list_label li{
+	background: url(../images/lists/label.png) scroll 0px 6px no-repeat;
+}
+ul.list_pencil li{
+	background: url(../images/lists/pencil.png) scroll 0px 6px no-repeat;
+}
+ul.list_plus li{
+	background: url(../images/lists/plus.png) scroll 0px 6px no-repeat;
+}
+ul.list_tick li{
+	background: url(../images/lists/tick.png) scroll 0px 6px no-repeat;
+}
+ul.list_trash li{
+	background: url(../images/lists/trash.png) scroll 0px 6px no-repeat;
+}
+ul.list_warning li{
+	background: url(../images/lists/warning.png) scroll 0px 6px no-repeat;
+}
+
+/** divider & dropcap & pullquotes */
+img.divider{
+	margin: 10px 0px 10px; 
+	height: 2px;
+	width: 100%;
+	display: block; 
+	border-bottom: 1px solid #e1e1e1;
+}
+.dropcap{
+	float: left; 
+	display: inline-block; 
+	font-size: 38px; 
+	font-weight: bold; 
+	line-height: 100%; 
+	margin: 2px 12px 0px 0px;
+	position: relative; 
+	color: #111;
+}
+.quote_left{
+	float: left; 
+	display: inline-block; 
+	width: 40%; 
+	margin: 10px 20px 10px 0px; 
+	padding: 6px 15px; 
+	min-height: 40px; 
+	font-size: 12px;
+	font-style: italic; 
+	font-family:Georgia, serif; 
+	background: url(../images/quote.png) scroll 0 0 no-repeat; 
+	color: #666;
+	}
+.quote_right{
+	float: right; 
+	display: inline-block; 
+	width: 40%; 
+	margin: 10px 0px 10px 20px; 
+	padding: 6px 15px; 
+	min-height: 40px; 
+	font-size: 12px; 
+	font-style: italic; 
+	font-family:Georgia, serif; 
+	background: url(../images/quote.png) scroll 0 0 no-repeat; color: #666;
+}
+
+
+img.testi{
+	width: 100%;
+	height: 70px;
+	display: block;
+	margin: 10px auto;
+	padding: 0;
+	border: 1px dashed #aaa;
+	background: #f2f8ff url(../images/testi_bg.png) scroll center no-repeat;
+}
+
+a.wip_button{
+	display: inline-block;
+	margin: 0px 5px 10px 0px;
+	font-family: arial, 'sans-serif';
+	background-image: url(../images/button-fade.png); 
+	background-position: 0% 100%;
+	background-repeat: repeat-x;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+a.wip_button.small{
+	padding: 3px 10px 3px; /*small padding*/
+	line-height: 15px;
+	font-size: 11px;
+}
+a.wip_button.medium{
+	padding: 4px 15px 4px; /*medium padding*/
+	line-height: 20px;
+	font-size: 12px;
+}
+a.wip_button.big{
+	padding: 5px 20px 6px; /*medium padding*/
+	line-height: 26px;
+	font-size: 13px;
+	font-weight: bold;
+}
