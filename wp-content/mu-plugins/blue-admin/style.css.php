@@ -61,7 +61,8 @@
 	
 	/* Contents */
 	.icon32.icon-dashboard, #icon-index ,.icon32.icon-post, #icon-edit, #icon-post,	.icon32.icon-media, #icon-upload,	.icon32.icon-links, #icon-link-manager, #icon-link, 	#icon-link-category,.icon32.icon-page, #icon-edit-pages, #icon-page,.icon32.icon-comments, #icon-edit-comments,	.icon32.icon-appearance, #icon-themes,
-	.icon32.icon-plugins, #icon-plugins,	.icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit, .icon32.icon-tools, #icon-tools, #icon-admin, .icon32.icon-settings, #icon-options-general, .icon32.icon-site, #icon-ms-admin {background-image: url('./images/icons32.png')!important;}	
+	.icon32.icon-plugins, #icon-plugins,	.icon32.icon-users, #icon-users, #icon-profile, #icon-user-edit, .icon32.icon-tools, #icon-tools, #icon-admin, .icon32.icon-settings, #icon-options-general, .icon32.icon-site, #icon-ms-admin 
+	{background-image: url('./images/icons32.png');}	
 	.show-settings{font-size:11px!important;}
 	.table_discussion .total-count,.table_discussion .approved-count,.table_discussion .pending-count,.table_discussion .spam-count{font-size: 18px;}
 	h3 span {font-size: 12px;font-weight: bold;}

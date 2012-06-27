@@ -383,7 +383,7 @@ class Wdeb_AdminPages {
 			$pro_href = 'supporter.php';
 			$pro_title = __('Supporter', 'wdeb');
 		}
-		return array (
+		return apply_filters('easy_mode_menu', array (
 			array (
 				'check_callback' => false,
 				'capability' => false,
@@ -481,7 +481,7 @@ class Wdeb_AdminPages {
 				'help' => __('Edit your profile information', 'wdeb'),
 			),
 
-		);
+		));
 	}
 
 	function set_easy_mode_flag () {

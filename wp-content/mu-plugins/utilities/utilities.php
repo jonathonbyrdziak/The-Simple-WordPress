@@ -3,14 +3,13 @@ function wdp_un_check(){}
 
 function remove_menu_items() {
 	global $menu;
-	//echo '<pre>';print_r($menu);die();
 	
 	$restricted = array(
 		'link-manager.php',
-		'tools.php',
+		//'tools.php',
 	);
 	
-	foreach ((array)$menu as $item) {
+	foreach ((array)$menu as $key => $item) {
 		if (!isset($item[2])) continue;
 		
 		if ($item[2] == 'Tools') {
@@ -18,8 +17,33 @@ function remove_menu_items() {
 		}
 		
 		if (!in_array($item[2], $restricted)) continue;
-		unset($restricted[$menu]);
+		unset($menu[$key]);
 	}
+}
+
+
+function crop($str, $len) {
+    if ( strlen($str) <= $len ) {
+        return $str;
+    }
+
+    // find the longest possible match
+    $pos = 0;
+    foreach ( array('. ', '? ', '! ') as $punct ) {
+        $npos = strpos($str, $punct);
+        if ( $npos > $pos && $npos < $len ) {
+            $pos = $npos;
+        }
+    }
+
+    if ( !$pos ) {
+        // substr $len-3, because the ellipsis adds 3 chars
+        return substr($str, 0, $len-3) . '...'; 
+    }
+    else {
+        // $pos+1 to grab punctuation mark
+        return substr($str, 0, $pos+1);
+    }
 }
 
 add_action('admin_menu', 'remove_menu_items');

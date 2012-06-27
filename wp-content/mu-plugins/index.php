@@ -3,11 +3,18 @@
  * 
  * 
  */
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'metabox.class.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'post.class.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'admin.class.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'widget.class.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'plugin.class.php';
+
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'utilities.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'firewall.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'remove-admin-bar.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'takeover.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'custom-login.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'picasa.php';
 
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'blue-admin'.DIRECTORY_SEPARATOR.'index.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'antivirus'.DIRECTORY_SEPARATOR.'antivirus.php';
@@ -28,3 +35,8 @@ require_once dirname(__file__).DIRECTORY_SEPARATOR.'wp-help'.DIRECTORY_SEPARATOR
 
 // related posts
 // http://wordpress.org/extend/plugins/related-posts-list-grid-and-slider-all-in-one
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Employees.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Services.php';
+
+
+//require_once dirname(__file__).DIRECTORY_SEPARATOR.'marketpress'.DIRECTORY_SEPARATOR.'marketpress.php';
