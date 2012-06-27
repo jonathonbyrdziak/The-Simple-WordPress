@@ -8,6 +8,7 @@ require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARAT
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'admin.class.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'widget.class.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'plugin.class.php';
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'cron.class.php';
 
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'utilities.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'firewall.php';

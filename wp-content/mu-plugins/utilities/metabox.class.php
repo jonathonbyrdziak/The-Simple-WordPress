@@ -63,7 +63,7 @@ class redrokk_metabox_class
 	 * 
 	 * @var string
 	 */
-	var $context = 'high';
+	var $context = 'normal';
 	
 	/**
 	 * The priority within the context where the boxes should show 
@@ -1226,22 +1226,13 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 	 */
 	function setOptionHooks()
 	{
-		foreach((array)$this->_fields as $field)
-		{
-			add_filter("pre_option_".$field['id'], array(&$this, 'getAdminOption'), 20, 2);
+		foreach ((array)$this->_fields as $field) {
+			$function = create_function('$default','
+				return redrokk_admin_class::getInstance("'.$this->_isAdminPage.'")
+				->getOption("'.$field['id'].'", $default, true);
+			');
+			add_filter("pre_option_{$field['id']}", $function, 20, 2);
 		}
-	}
-	
-	/**
-	 * Method returns the option if the metabox is assigned to an admin page
-	 * 
-	 * @param $option
-	 * @param $default
-	 */
-	function getAdminOption( $option, $default )
-	{
-		return redrokk_admin_class::getInstance($this->_isAdminPage)
-			->getOption($option, $default, true);
 	}
 	
 	/**

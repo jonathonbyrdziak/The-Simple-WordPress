@@ -293,6 +293,10 @@ class redrokk_admin_class
 		else {
 			add_action('admin_init', array($this, 'init_admin_settings_outside'));
 		}
+		
+		//create the post for this page.
+		$this->_id = get_option("post_id-$this->id", false);
+		
 		ob_start();
 	}
 	
@@ -883,7 +887,11 @@ class redrokk_admin_class
 	
 	<div id="poststuff" class="metabox-holder<?php echo 2 == $screen_layout_columns ? ' has-right-sidebar' : ''; ?>">
 		<div id="side-info-column" class="inner-sidebar">
-			<?php $side_meta_boxes = do_meta_boxes($this->getContext(), 'side', $post); ?>
+			<?php 
+			if ( 1 < $screen_layout_columns ) {
+				do_meta_boxes($this->getContext(), 'side', $post);
+			}
+			?>
 		</div>
 		
 		<div id="post-body">
@@ -951,11 +959,6 @@ class redrokk_admin_class
 				
 				remove_meta_box('wpseo_meta', $this->id, 'normal');
 				
-				if ( 1 == $screen_layout_columns ) {
-					do_action('submitpost_box');
-					$side_meta_boxes = do_meta_boxes($this->getContext(), 'side', $post);
-				}
-				
 				do_action('edit_form_high');
 				do_meta_boxes($this->getContext(), 'high', $post); 
 				
@@ -966,6 +969,11 @@ class redrokk_admin_class
 				do_meta_boxes($this->getContext(), 'advanced', $post);
 				
 				do_action('dbx_post_sidebar');
+				if ( 1 == $screen_layout_columns ) {
+					do_action('submitpost_box');
+					do_meta_boxes($this->getContext(), 'side', $post);
+				}
+				
 				?>
 				<div id="edit-slug-box" style="visibility:hidden;"></div>
 				
@@ -1189,9 +1197,6 @@ try{document.post.title.focus();}catch(e){}
 			));
 		}
 		
-		//create the post for this page.
-		$this->_id = get_option("post_id-$this->id", false);
-		
 		//a little option to start my tests over
 		if ($this->_delete) 
 		{
@@ -1225,6 +1230,16 @@ try{document.post.title.focus();}catch(e){}
 		if (isset($_GET['redpost_id']) && $_GET['redpost_id']) {
 			$this->_id = $_GET['redpost_id'];
 		}
+	}
+	
+	/**
+	 * Returns the post that we're saving information to
+	 * 
+	 * @return mixed
+	 */
+	function getPost()
+	{
+		return get_post($this->_id);
 	}
 	
 	/**
