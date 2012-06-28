@@ -1,6 +1,37 @@
 <?php 
 function wdp_un_check(){}
 
+// Supports featured images on posts and pages
+add_theme_support('post-thumbnails');
+
+// Supports RSS feed links
+add_theme_support('automatic-feed-links');
+
+// Support replaces the standard jquery with the google api
+function activate_init() 
+{
+	if (is_admin()) return false;
+	
+	// javascript
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', false, '1.3.2');
+	wp_enqueue_script('jquery');
+	
+	wp_register_script('jquery.ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js', array('jquery'), '1.8.18');
+	wp_enqueue_script('jquery.ui');
+}
+
+add_action('init', 'activate_init');
+
+
+function is_current_user_admin()
+{
+	$user = new WP_User( get_current_user_id() );
+	if (key($user->caps) !== 'administrator')
+		return false;
+	return true;
+}
+
 function remove_menu_items() {
 	global $menu;
 	

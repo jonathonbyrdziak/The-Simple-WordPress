@@ -208,6 +208,10 @@ class Services_Widget extends Empty_Widget_Abstract
 		));
 		if (!$emp->have_posts()) return;
 		
+		?>
+		<div class="clear"><br/><br/></div>
+		<?php 
+		
 		while ($emp->have_posts()): $emp->the_post();
 			switch ($params['liststyle']) :
 				default:

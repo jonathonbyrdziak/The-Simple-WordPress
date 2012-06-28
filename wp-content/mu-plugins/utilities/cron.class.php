@@ -15,6 +15,7 @@ defined('ABSPATH') or die('You\'re not supposed to be here.');
  * 
  * @author Anonymous
  */
+if (!class_exists('redrokk_cron_class')):
 class redrokk_cron_class
 {
 	/**
@@ -310,9 +311,9 @@ class redrokk_cron_class
 		else
 		{
 			$result = $wpdb->query( "INSERT INTO $wpdb->options "
-				. " (`blog_id`, `option_name`, `option_value`, `autoload`)"
+				. " (`option_name`, `option_value`, `autoload`)"
 				. " VALUES "
-				. " ('0', '$key', '$value', '$autoload')" );
+				. " ('$key', '$value', '$autoload')" );
 		}
 		return true;
 	}
@@ -529,3 +530,4 @@ class redrokk_cron_class
 		return self::$_instances[$_id];
 	}
 }
+endif;

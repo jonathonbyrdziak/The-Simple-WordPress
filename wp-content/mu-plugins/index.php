@@ -17,6 +17,9 @@ require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARAT
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'custom-login.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'picasa.php';
 
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'layouts'.DIRECTORY_SEPARATOR.'index.php';
+//require_once dirname(__file__).DIRECTORY_SEPARATOR.'shortcodes'.DIRECTORY_SEPARATOR.'index.php';
+
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'blue-admin'.DIRECTORY_SEPARATOR.'index.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'antivirus'.DIRECTORY_SEPARATOR.'antivirus.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'admin-management-xtended'.DIRECTORY_SEPARATOR.'admin-management-xtended.php';
@@ -27,17 +30,16 @@ require_once dirname(__file__).DIRECTORY_SEPARATOR.'comments-control'.DIRECTORY_
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'easyblogging'.DIRECTORY_SEPARATOR.'easyblogging.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'html-emails'.DIRECTORY_SEPARATOR.'html-emails.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'login-security-solution'.DIRECTORY_SEPARATOR.'login-security-solution.php';
-require_once dirname(__file__).DIRECTORY_SEPARATOR.'shortcodes'.DIRECTORY_SEPARATOR.'index.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'video-training'.DIRECTORY_SEPARATOR.'wpvt.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'wp-email-login'.DIRECTORY_SEPARATOR.'email-login.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'technical-support'.DIRECTORY_SEPARATOR.'technical-support.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'wp-help'.DIRECTORY_SEPARATOR.'wp-help.php';
 
-
 // related posts
 // http://wordpress.org/extend/plugins/related-posts-list-grid-and-slider-all-in-one
+require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Business.php';
+
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Employees.php';
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Services.php';
-
 
 //require_once dirname(__file__).DIRECTORY_SEPARATOR.'marketpress'.DIRECTORY_SEPARATOR.'marketpress.php';

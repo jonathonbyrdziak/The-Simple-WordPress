@@ -207,7 +207,7 @@ class Employee_Widget extends Empty_Widget_Abstract
 					'id' 		=> 'size',
 					'type'		=> 'text',
 					'desc' 		=> 'Must be an integer',
-					'default'	=> 92
+					'default'	=> 150
 			),
 		)
 	);
@@ -231,6 +231,10 @@ class Employee_Widget extends Empty_Widget_Abstract
 			'post_status'	=> 'publish',
 		));
 		if (!$emp->have_posts()) return;
+		
+		?>
+		<div class="clear"><br/><br/></div>
+		<?php 
 		
 		while ($emp->have_posts()): $emp->the_post();
 			switch ($params['liststyle']) :

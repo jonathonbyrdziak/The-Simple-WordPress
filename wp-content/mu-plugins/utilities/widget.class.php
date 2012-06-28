@@ -258,7 +258,9 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 			$fields[$field['id']] = $meta ?$meta :$field['default'];
 		}
 		
+		ob_start();
 		$this->widget(array(), $fields);
+		return ob_get_clean();
 	}
 	
 	/**

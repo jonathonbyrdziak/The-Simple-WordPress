@@ -286,3 +286,132 @@ function picasa_save_file( $url )
 	return $file_array;
 }
 
+
+
+/**
+ * Actions and Filters
+ *
+ * Register any and all actions here. Nothing should actually be called
+ * directly, the entire system will be based on these actions and hooks.
+ */
+add_action( 'widgets_init', create_function( '', 'register_widget("Picasa_Widget");' ) );
+
+/**
+ * This is the class that you'll be working with. Duplicate this class as many times as you want. Make sure
+ * to include an add_action call to each class, like the line above.
+ *
+ * @author byrd
+ *
+ */
+class Picasa_Widget extends Empty_Widget_Abstract
+{
+	/**
+	 * Widget settings
+	 *
+	 * Simply use the following field examples to create the WordPress Widget options that
+	 * will display to administrators. These options can then be found in the $params
+	 * variable within the widget method.
+	 *
+	 *
+	 */
+	protected $widget = array(
+		// you can give it a name here, otherwise it will default
+		// to the classes name. BTW, you should change the class
+		// name each time you create a new widget. Just use find
+		// and replace!
+		'name' => 'Picasa Album',
+
+		// this description will display within the administrative widgets area
+		// when a user is deciding which widget to use.
+		'description' => 'Widget displays your synchronized picasa photos. Red Rokk',
+
+		// determines whether or not to use the sidebar _before and _after html
+		'do_wrapper' => true,
+
+		// determines whether or not to display the widgets title on the frontend
+		'do_title'	=> true,
+
+		// string : if you set a filename here, it will be loaded as the view
+		// when using a file the following array will be given to the file :
+		// array('widget'=>array(),'params'=>array(),'sidebar'=>array(),
+		// alternatively, you can return an html string here that will be used
+		'view' => false,
+	
+		// If you desire to change the size of the widget administrative options
+		// area
+		'width'	=> 650,
+		'height' => 450,
+	
+		// Shortcode button row
+		'buttonrow' => 4,
+	
+		// The image to use as a representation of your widget.
+		// Whatever you place here will be used as the img src
+		// so we have opted to use a basencoded image.
+		'thumbnail' => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEhSURBVHjaYvj//z8DOv7IwJwGxP/R8GZsalkYoKDRdpIxkJoJxFL1//9IfWIES81kQAAfEPE9gfEMkPLjXPD/GYjPhKYZREsC+c/4/v+ZBWSnM2ACkJozQIOk4AYgaYYBQoZIAvEmsAFAhb5ommEArBGfS4CuiAR5dCGaxC0gjqo/nHcWJgAyBBom6KAY5AVBfJqRDcHmCmRjTwA1WjKQCGCBOAukmdGip4EcA2Y1/P6VDtS8GciuJ9UARlBqgmoGJ5T/J0oY8WkAhvx+JO4FFqBmX5hmYgAwBTpic8EZWFoAuYCxnvE/EWYd+N/43xEWiMHQKCQWHADiJHgsAG19CKTcgPgssZqBtt+HewEjZOvBAeWAJvwWiC+DnI0sCBBgACgUlKfkR6d3AAAAAElFTkSuQmCC',
+					
+		/* The field options that you have available to you. Please
+		 * contribute additional field options if you create any.
+		 *
+		 */
+		'fields' => array(
+			array(
+				'name' => 'Title',
+				'desc' => '',
+				'id' => 'title',
+				'type' => 'text',
+				'default' => 'Portfolio'
+			),
+		)
+	);
+
+	/**
+	 * Widget HTML
+	 *
+	 * If you want to have an all inclusive single widget file, you can do so by
+	 * dumping your css styles with base_encoded images along with all of your
+	 * html string, right into this method.
+	 *
+	 * @param array $widget
+	 * @param array $params
+	 * @param array $sidebar
+	 */
+	function html($widget, $params, $sidebar)
+	{
+		$post = redrokk_admin_class::getInstance('picasa-admin')->getPost();
+		$urls = get_post_meta($post->ID, 'picasa_sync');
+		
+		$attachments = get_posts(array(
+			'post_type' => 'attachment',
+			'numberposts' => 0,
+			//'post_status' => 'inherit',
+			'post_parent' => $post->ID
+		));
+		
+		if (!$attachments) return;
+		
+		?>
+		<div class="content-wrapper nosidebars table clearfix"><div class="content clearfix">
+    		<div class="article-portfolio">
+    	<?php 
+		foreach ((array)$attachments as $attachment)
+		{
+			//print_r($attachment);
+			?>
+			<div class="article-block-portfolio" style="z-index: 983; ">
+				<div class="image-med" style="z-index: 982; ">
+					<div class="preload" style="z-index: 981; ">
+					<a class="prettyPhoto[pp_gal]" rel="prettyPhoto[pp_gal]" href="<?php echo simpolio_image(array('type'=>'med','url'=>$attachment->guid)) ?>" style="">
+						<span class="hover"></span>
+						<span class="zoom" style="opacity: 0; "></span>
+					</a>
+					</div>
+				</div>
+			</div>
+			<?php 
+		}
+		?>
+		</div></div></div>
+  		<?php 
+	}
+}
