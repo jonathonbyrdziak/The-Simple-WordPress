@@ -20,12 +20,13 @@
  */
 var LayoutWidget;
 (function(j){
-	var LayoutWidgets = [];
+	var LayoutWidgets = {};
 	
 	// Container
 	var Container = Class.extend({
 		defaults	: {
 			container		: '#rokkout', //the css
+			existing 		: false,
 			sortable		: {
 				handle		: '.rokkout-handle',
 				activeclass : 'row-being-drug',
@@ -33,10 +34,10 @@ var LayoutWidget;
 			        element: function(currentItem) {
 			            var p = j("<div/>")
 			            	.css({
-			            		height	: j(currentItem).height()+4,
-			            		width	: j(currentItem).parent().width()-8,
-			            		border	: '4px dashed #627DB4',
-			            		opacity	: 0.3
+			            		height	: j(currentItem).height() + 4,
+			            		width	: j(currentItem).parent().width() - 8,
+			            		border	: '4px dashed #e1e1e1',
+			            		marginBottom	: '16px'
 			            	});
 			            return p;
 			        },
@@ -61,15 +62,12 @@ var LayoutWidget;
 				cursor		: "move",
 			},
 			cssRows			: {
-				background	: '#fff',
-				position	: 'relative',
-				border		: '4px solid #fff',
-//				overflowX	: 'hidden',
+				position	: 'relative'
 			},
-			cssRowMouseover	: {
-				border		: '4px solid #e1e1e1'
+			cssRowDesignOn	: {
+				border		: '4px solid #627DB4'
 			},
-			cssRowMouseout	: {
+			cssRowDesignOff	: {
 				border		: '4px solid #fff'
 			},
 			cssRowHandleMouseover	: {
@@ -83,11 +81,11 @@ var LayoutWidget;
 				display		: 'none',
 				borderRadius: '3px',
 				position	: 'relative',
-				border		: '1px solid #e1e1e1',
+				border		: '1px solid #627DB4',
 				width		: '150px',
 				left		: '-138px',
 				top			: '17px',
-				background	: '#E1E1E1',
+				background	: '#627DB4',
 				margin		: '0',
 				padding		: '5px 0 5px 5px'
 			},
@@ -96,42 +94,12 @@ var LayoutWidget;
 				margin		: '0',
 				textAlign	: 'left',
 				fontSize	: '13px',
-				color		: '#627DB4',
+				fontWeight	: 'bold',
+				color		: '#fff',
 				cursor		: 'pointer',
 				textTransform : 'capitalize'
 			},
-			cssHandle		: {
-				borderBottomLeftRadius: '3px',
-				backgroundImage : 'url("' + 'data:image/png;base64,' +
-				'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A' +
-				'/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wGGxcBHcIEu6cAAANiSURBVDjLXZNd' +
-				'bFN1GMafc05b6TkdtCVW26002ZbVzCF6BxEZCI5kxpuJI95gVD5GVOZiROetidlVIzcQRRlZr5YlRHAz' +
-				'mRCYxnajumya6D7sh7O2ZaEfp1tPe9qe///1wg0Hv6v3TZ73zfs8yStgg5aWFsRiMQSDQfh8vm3ZbFYO' +
-				'h8OFjo4Owe12OxOJRLGvr68OAF1Hj+L7yUk8YHFxEVtJpVJnl5eXfw8Gg0+HQqFXotHo8sTE+MtbNR8P' +
-				'Dv5XeDweAMDc3FxbOp0eCgQCB1ZXVy8SESWTyXAun0+UNY3Gx8c/mZ2dPf5nLPYpABseJZVKDTHGapqm' +
-				'5arVatEwDF6r1Vi1ViO9qrO1tfV8qVRaV1VVm5y8+faDwZGREQBAIBA4oGladmOQ12o1put6vaLr9XJZ' +
-				'Z5VKhZcrFZ5Op/8C4AaA4ZGrMHm93m3JZPJNk8m0W5QkM+dcMAyDZzKZecMwfiTAbFNsLzkc9jYQSBTF' +
-				'x/5OJvsL+UIkEolcF7PZrFwqld51uVxnJVFs4JxTOpOZHx0dPeP3+wee8vvPLSz80V8qafcNzgSrrDyp' +
-				'yMpHhULh9UQibpE8jY0653zK4XA8pyhKIxFRPpcb6+npGd5wScFgMNrV1aW5HncdhABTLBb75sKFzwdk' +
-				'Wc6Je57ZLTQ3tzTLsuLmRAJnnIhgBiBu5vTOe+esTqfTTyATZxyyLLsPHzmys1LWBOn0qTM7m7xNYw6H' +
-				'oxkQQEQi48ze3d29ZLdvv3/ixBvKa8dePeZ2ewZFUbRyzgVJMnktFssTqlr81hRPxIt1Zry/tLS0Z//+' +
-				'Fz4wm81O+44dbe3t7Ze9TU2/SJJktTVs3wtRaCACFQqFf2amZz4TRGGxoKq6sHnm3UjkeGtr61eSJNlA' +
-				'AGMMnDgngkCcA4BARChppczpk6cO375ze+H5vfv+96nYlA6jbgiqqq4U14r3CABnnBgziBNHLp9Prq2v' +
-				'p4kg9w8M7AOA0Mw00NnZubnDNv7dxEkA7mg0NpTO3KNQOHxt/tffZuLxBH195UrfoRcPtV+/ceOtrQED' +
-				'AD48f/6h/m7k556bt26N9fb2ei9euvTs1NQP14aHrx7cqvHt2gUAEB79iS++vAzG6tLKyoqlqusVTSsL' +
-				'Pp/PqqpFPRye5uHwTw/p/wXQV8s8KO6lLgAAAABJRU5ErkJggg==' + '")',
-				backgroundRepeat : 'no-repeat',
-				backgroundPosition : 'center center',
-				backgroundColor	: '#e1e1e1',
-				position 	: 'absolute',
-				width		: '18px',
-				height		: '18px',
-				border		: '1px solid #e1e1e1',
-				top			: '0',
-				right		: '0',
-				zIndex		: '1000',
-				visibility 	: 'hidden'
-			}
+			cssHandle		: {}
 		},
 		
 		init		: function(options) {
@@ -139,9 +107,9 @@ var LayoutWidget;
 			this.c = j(this.o.container);
 			this.rows = this.c.children();
 			
-			this.lastdrop = '';
-			
 			this.addListeners();
+			this.setExisting();
+			this.designModeOff();
 		},
 		
 		addListeners	: function() {
@@ -152,10 +120,50 @@ var LayoutWidget;
 			// managing the container
 			this.o.droppable.drop = this.newRow.bind(this);
 			this.c.droppable(this.o.droppable).sortable(this.o.sortable);
-			this.rows.each(function(i,e){ new DesignRow(e,o); });
 			
 			// managing the widets api
-			j(LayoutWidgets).each(this.newLayoutWidget.bind(this));
+			j.each(LayoutWidgets, this.newLayoutWidget.bind(this));
+		},
+		
+		setExisting		: function() {
+			var self = this;
+			if (this.o.existing) {
+				j.each(this.o.existing, function(k,id){
+					var w = self.getWidget( id );
+					
+					var ele = (w) ?self.wrapWidget(w) :j('#'+id);
+					var row = new DesignRow(ele, self.o, w);
+					
+					if (!w) {
+						row.e.width( row.e.width() - 8 );
+					}
+					
+					(!k) ?row.prepend(self.c) :row.append(self.c);
+				});
+			}
+			else {
+				this.rows.each(function(i,e){ new DesignRow(e,self.o,false); });
+			}
+			this.containerHeight();
+		},
+		
+		getWidget		: function( id ) {
+			var widget = false;
+			var substr = id.split('---');
+			id = substr[0];
+			j.each(LayoutWidgets, function(i,w) {
+				if (w.id != id) return true;
+				widget = w;
+			});
+			return widget;
+		},
+		
+		wrapWidget		: function(widget) {
+			var wrapper = j('<div class="layouts_design_item button"/>');
+			var thumbnail = widget.thumbnail( wrapper );
+			var inner = j('<div class="innerWrapper"/>').append( thumbnail );
+			
+			return wrapper.append( inner );
 		},
 		
 		newLayoutWidget	: function(i,widget) {
@@ -165,23 +173,24 @@ var LayoutWidget;
 				j(ui.helper).data("LayoutWidget", widget);
 		    }
 			
-			// playing the shell game
-			var wrapper = j('<div class="layouts_design_item button"/>');
-			var thumbnail = widget.thumbnail( wrapper );
-			var inner = j('<div class="innerWrapper"/>').append( thumbnail );
-			
 			// drop it in the dom
-			wrapper.append( inner ).draggable(this.o.draggable);
+			var wrapper = this.wrapWidget( widget )
+				.draggable(this.o.draggable);
 			j('#designmode').append( wrapper );
 		},
 		
 		newRow			: function(ev, ui) {
 			if (j(ui.draggable).data('DesignRow')) return;
-			
-			var row = new DesignRow(ui.draggable,this.o);
+
+			var row = new DesignRow(ui.draggable,this.o,ui.helper.data("LayoutWidget"));
 			j(ui.draggable).data('DesignRow', row);
 			
-			row.newOnDrop(ev, ui, ui.helper.data("LayoutWidget"));
+			this.containerHeight();
+		},
+		
+		containerHeight	: function() {
+			j(this.o.container).height('auto');
+			j(this.o.container).height(j(this.o.container).height() + 50);
 		},
 		
 		modeClick		: function(e) {
@@ -193,8 +202,20 @@ var LayoutWidget;
 			if (el.hasClass('button-primary'))
 				var on = false;
 			
+			// turn everything off
 			j('.rokkin_button').removeClass('button-primary');
+			this.designModeOff();
+			this.contentModeOff();
 			
+			// turning on the modes
+			if (on && el.attr('data') == '#designmode') {
+				this.designModeOn();
+			}
+			else if (on) {
+				this.contentModeOn();
+			}
+			
+			// changing the menu
 			if (on && this.winopen) {
 				el.addClass('button-primary');
 				
@@ -203,11 +224,11 @@ var LayoutWidget;
 				j('.rokkin_button').each(function(i,ele){
 					j( j(ele).attr('data') ).fadeOut();
 				});
+				
 				win.fadeIn(function(){
 					j('.rokkin_scroll').css('position','relative')
 					j('.rokkin_scroll').parent('div').css('height','auto');
 				});
-				
 			}
 			else if (on) {
 				el.addClass('button-primary');
@@ -219,14 +240,37 @@ var LayoutWidget;
 				this.winopen = false;
 			}
 			return false;
+		},
+		
+		designModeOn	: function() {
+			this.designmode = true;
+			this.rows.css(this.o.cssRowDesignOn);
+			j('.layout_widget_cell').css(this.o.cssRowDesignOn);
+		},
+		
+		designModeOff	: function() {
+			this.designmode = false;
+			this.rows.css(this.o.cssRowDesignOff);
+			j('.layout_widget_cell').css(this.o.cssRowDesignOff);
+		},
+		
+		contentModeOn	: function() {
+			this.contentmode = true;
+			
+		},
+		
+		contentModeOff	: function() {
+			this.contentmode = false;
+			
 		}
 	});
 	
 	// Design Row
 	var DesignRow = Class.extend({
-		init		: function(e, o) {
+		init		: function(e, o, widget) {
 			this.e = j(e);
 			this.o = o;
+			this.widget = widget;
 			
 			this.menu = j('<ul class="rokkout-handle-menu"></ul>')
 				.css(this.o.cssMenu);
@@ -239,6 +283,16 @@ var LayoutWidget;
 				.css(this.o.cssRows)
 				.append(this.handle);
 			
+			if (this.widget) {
+				this.newOnDrop();
+			} else {
+				this.e.append('<input name="layouts_design_items[]" type="hidden" value="'+ this.e.attr('id') +'" />');
+			}
+			
+			if (!this.isDesign()) {
+				this.e.css({'width' : j(o.container).width() });
+			}
+				
 			this.addListeners();
 		},
 		
@@ -250,31 +304,44 @@ var LayoutWidget;
 				.bind('click', this.handleClick.bind(this));
 		},
 		
-		newOnDrop		: function(ev, ui, widget) {
+		newOnDrop		: function() {
 			var self = this;
-			this.e.css('width', (ui.draggable.parent().width()-8) );
 			
 			// creating the menu
-			j(widget.menuItems).each(function(k,item){
+			j(this.widget.menuItems).each(function(k,item){
 				var ele = j(item.html)
 					.css(self.o.cssMenuItem);
 				
 				if (item.click) 
 					ele.bind('click', function(e){
-						if (item.click) return item.click(e, self.e, widget);
+						return item.click(e, self.e, self.widget);
 					});
 				
 				self.menu.append(ele);
 			});
+
+			this.e.css('width', this.e.parent().width() )
+				.removeClass('button')
+				.removeClass('layouts_design_item');
 			
-			this.e.removeClass('button').removeClass('layouts_design_item');
-			this.e.find('> .innerWrapper').replaceWith( widget.element( this.e, this ) );
+			this.e.find('> .innerWrapper')
+				.after('<input name="layouts_design_items[]" type="hidden" value="'+ this.widget.id +'---'+ u() +'" />')
+				.replaceWith( this.widget.element( this.e, this ) );
+			
+		},
+		
+		append			: function(el) {
+			j(el).append( this.e );
+		},
+		
+		prepend			: function(el) {
+			j(el).prepend( this.e );
 		},
 		
 		isDesign		: function() {
 			return (j('#layouts_design_mode').hasClass('button-primary'));
 		},
-	
+		
 		rowMouseover	: function(e) {
 			if (!this.isDesign()) return;
 			if (j('.rokkout-active').length) return;
@@ -283,8 +350,6 @@ var LayoutWidget;
 				this.menu.remove();
 			
 			var ele = j(e.currentTarget).find('.rokkout-handle');
-			
-			j(e.currentTarget).css(this.o.cssRowMouseover);
 			if (!ele.hasClass('rokkout-active'))
 				ele.css(this.o.cssRowHandleMouseover);
 		},
@@ -294,12 +359,10 @@ var LayoutWidget;
 			if (j('.rokkout-active').length) return;
 			
 			var ele = j(e.currentTarget).find('.rokkout-handle');
-
-			j(e.currentTarget).css(this.o.cssRowMouseout);
 			if (!ele.hasClass('rokkout-active'))
 				ele.css(this.o.cssRowHandleMouseout);
 		},
-
+		
 		handleClick		: function(e) {
 			if (!this.menu.html()) return;
 			var ele = j(e.currentTarget);
@@ -320,7 +383,7 @@ var LayoutWidget;
 	LayoutWidget = Class.extend({
 		menuItems : [
      		{
-    			html	: '<li>Delete this item</li>',
+    			html	: '<li>Delete this row</li>',
     			click	: function(e, el, widget) {
      				e.stopPropagation();
      				el.remove();
@@ -333,13 +396,14 @@ var LayoutWidget;
 			j.each(this.menuItems, function(i,e){
 				menuItems.push(e);
 			});
-			j.each(o.menuItems, function(i,e){
+			
+			if (o.menuItems) j.each(o.menuItems, function(i,e){
 				menuItems.push(e);
 			});
 			o.menuItems = menuItems;
 			
 			var self = j.extend(true, this, o);
-			LayoutWidgets.push(self);
+			LayoutWidgets[self.id] = self;
 		}
 	});
 	
@@ -350,42 +414,47 @@ var LayoutWidget;
 			j(this).ro = new Container(no);
 		});
 	};
+	
+	var id = 1;
+	function u() {
+		return ++id;
+	}
 })(jQuery);
 
-// One row
+
+// Default Widgets
 new LayoutWidget({
+	id		: 'SingleCell',
 	element		: function(original) {
-		var el = jQuery('<div>Cell</div>')
-			.css({
-				border		: '4px solid #555',
-				background	: '#999',
-				height		: '35px',
-				lineHeight	: '35px',
-				textAlign	: 'center'
-			});
+		var el = jQuery('<div class="layout_widget_cell"/>');
 		return el;
 	},
 	thumbnail	: function(wrapper) {
 		return jQuery('<div>Single Cell</div>');
-	},
-	menuItems	: [
-		{
-			html	: '<li>first menu item</li>',
-			click	: function(e) {
-				//e.stopPropagation();
-				
-				//return false;
-			}
-		},
-		{
-			html	: '<li>second menu item</li>',
-			click	: function(e) {
-				console.log( 'second click!' );
-			}
-		}
-	]
+	}
 });
 
+new LayoutWidget({
+	id		: 'DoubleCell',
+	element		: function(original, obj) {
+		var n = 2;
+		var ta = jQuery(obj.o.container).width() - 16;
+		var tr = ta - ((n - 1) * 20);
+		var td = tr / n;
+		
+		var el = jQuery('<div class="layout_widget_cell" style="width:' + td + 'px;margin-right:20px;float:left;"></div>' +
+				'<div style="width:' + td + 'px;float:right;" class="layout_widget_cell"></div>' +
+				'<div style="clear:both;width:100%"></div>');
+		return el;
+	},
+	thumbnail	: function(wrapper) {
+		return jQuery('<div>Two Cells</div>');
+	}
+});
+
+
 jQuery(document).ready(function(){
-	jQuery('#post-body-content').RokkOut();
+	jQuery('#post-body-content').RokkOut({
+		existing : layouts_design_mode
+	});
 });	
