@@ -123,6 +123,8 @@ border-radius: 3px!important;-moz-border-radius: 3px!important;}
 	#nav{float:right;}
 	#nav,#backtoblog {padding: 0!important;margin:5px!important;}
 	
+	.widget-inside {background:#fff;border-top: 1px solid #DDD!important;}
+	
 <?php } ?>	
 	
 	/* Admin Bar */

@@ -174,7 +174,7 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 		
 		// widget actual processes
 		parent::WP_Widget( 
-			$id = $classname, 
+			$id = $this->_class, 
 			$name = $this->widget['name'], 
 			$widget_options = array( 
 				'description' => $this->widget['description'] 
@@ -278,7 +278,7 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 	 * @return boolean
 	 */
 	function form( $instance = array(), $shortcode = false )
-	{	
+	{
 		// initializing
 		$fields = $this->widget['fields'];
 		$defaults = array(
@@ -328,10 +328,10 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 						<p>
 							<label for="<?php echo $id; ?>">
 								<?php echo $name; ?> :
-								<input id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
-									value="<?php echo $meta; ?>" type="<?php echo $type; ?>" 
-									class="text large-text <?php echo $class; ?>" />
 							</label>
+							<input id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
+								value="<?php echo $meta; ?>" type="<?php echo $type; ?>" 
+								class="text large-text <?php echo $class; ?>" />
 							
 							<br/>
 							<span class="description"><?php echo $desc; ?></span>
@@ -341,11 +341,11 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 						<p>
 							<label for="<?php echo $id; ?>">
 								<?php echo $name; ?> :
-								<textarea cols="60" rows="4" style="width:97%"
-									id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
-									class="large-text <?php echo $class; ?>"
-									><?php echo $meta; ?></textarea>
 							</label>
+							<textarea cols="60" rows="4" style="width:97%"
+								id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
+								class="large-text <?php echo $class; ?>"
+								><?php echo $meta; ?></textarea>
 							
 							<br/>
 							<span class="description"><?php echo $desc; ?></span>
@@ -368,27 +368,27 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 						<p>
 							<label for="<?php echo $id; ?>">
 								<?php echo $name; ?> : 
-								
-								<?php if ($type == 'select_categories'): ?>
-									<?php wp_dropdown_categories($args); ?>
-								
-								<?php else: ?>
-									<select <?php echo $multiple ?"MULTIPLE SIZE='$multiple'" :''; ?>
-										id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
-										class="<?php echo $class; ?>">
-										
-										<?php foreach ((array)$options as $_value => $_name): ?>
-										<?php $_value = !is_int($_value)?$_value:$_name; ?>
-										<option 
-											value="<?php echo $_value; ?>"
-											<?php echo $meta == $_value?' selected="selected"' :''; ?>
-											><?php echo $_name; ?>
-										</option>
-										<?php endforeach; ?>
-									
-									</select>
-								<?php endif; ?>
 							</label>
+								
+							<?php if ($type == 'select_categories'): ?>
+								<?php wp_dropdown_categories($args); ?>
+							
+							<?php else: ?>
+								<select <?php echo $multiple ?"MULTIPLE SIZE='$multiple'" :''; ?>
+									id="<?php echo $id; ?>" name="<?php echo $element_name; ?>" 
+									class="<?php echo $class; ?>">
+									
+									<?php foreach ((array)$options as $_value => $_name): ?>
+									<?php $_value = !is_int($_value)?$_value:$_name; ?>
+									<option 
+										value="<?php echo $_value; ?>"
+										<?php echo $meta == $_value?' selected="selected"' :''; ?>
+										><?php echo $_name; ?>
+									</option>
+									<?php endforeach; ?>
+								
+								</select>
+							<?php endif; ?>
 							
 							<br/>
 							<span class="description"><?php echo $desc; ?></span>
@@ -400,14 +400,14 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 						</p>
 						<p>
 							<?php foreach ((array)$options as $_value => $_name): ?>
-							<label class="<?php echo $element_name; ?>" for="<?php echo $id; ?>">
 								<input name="<?php echo $element_name; ?>"  id="<?php echo $id; ?>" 
 									value="<?php echo $_value; ?>" type="<?php echo $type; ?>" 
 									<?php echo $meta == $_value?'checked="checked"' :''; ?>
 									class="<?php echo $class; ?>" />
-									
-								<?php echo $_name; ?>
-							</label>
+										
+								<label class="<?php echo $element_name; ?>" for="<?php echo $id; ?>">
+									<?php echo $_name; ?>
+								</label>
 							<?php endforeach; ?>
 							
 							<br/>
@@ -424,14 +424,14 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 							<input type="hidden" name="<?php echo $element_name; ?>" value="" />
 							
 							<?php foreach ((array)$options as $_value => $_name): ?>
-							<label class="<?php echo $element_name; ?>" for="<?php echo $id; ?>">
 								<input value="<?php echo $_value; ?>" type="<?php echo $type; ?>" 
 									name="<?php echo $element_name; ?>" id="<?php echo $id; ?>" 
 									<?php echo $meta == $_value? 'checked="checked"' :''; ?>
 									class="<?php echo $class; ?>" />
 								
-								<?php echo $name; ?>
-							</label>
+								<label class="<?php echo $element_name; ?>" for="<?php echo $id; ?>">
+									<?php echo $_name; ?>
+								</label>
 							<?php endforeach; ?>
 							
 							<br/>
@@ -453,7 +453,7 @@ abstract class Empty_Widget_Abstract extends WP_Widget
 							style="visibility:hidden;" />
 					<?php break; ?>
 					
-					<?php case 'checkbox': ?>
+					<?php case 'custom': ?>
 						<?php echo $default; ?>
 					<?php break; ?>
 					

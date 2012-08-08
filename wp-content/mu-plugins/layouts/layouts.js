@@ -127,17 +127,23 @@ var LayoutWidget;
 		
 		setExisting		: function() {
 			var self = this;
+			
 			if (this.o.existing) {
 				j.each(this.o.existing, function(k,id){
-					var w = self.getWidget( id );
-					
-					var ele = (w) ?self.wrapWidget(w) :j('#'+id);
-					var row = new DesignRow(ele, self.o, w);
-					
-					if (!w) {
-						row.e.width( row.e.width() - 8 );
+					var number = 0;
+					var substr = id.split('---');
+					i = substr[0];
+
+					if (typeof substr[1] !=='undefined') {
+						number = u( substr[1] );
 					}
 					
+					var w = self.getWidget( i );
+					
+					var ele = (w) ?self.wrapWidget(w) :j('#'+id);
+					var row = new DesignRow(ele, self.o, w, number);
+					
+					(!w) ?row.e.width( row.e.width() - 8 ) :null;
 					(!k) ?row.prepend(self.c) :row.append(self.c);
 				});
 			}
@@ -149,12 +155,11 @@ var LayoutWidget;
 		
 		getWidget		: function( id ) {
 			var widget = false;
-			var substr = id.split('---');
-			id = substr[0];
 			j.each(LayoutWidgets, function(i,w) {
 				if (w.id != id) return true;
 				widget = w;
 			});
+			
 			return widget;
 		},
 		
@@ -256,18 +261,17 @@ var LayoutWidget;
 		
 		contentModeOn	: function() {
 			this.contentmode = true;
-			
 		},
 		
 		contentModeOff	: function() {
 			this.contentmode = false;
-			
 		}
 	});
 	
 	// Design Row
 	var DesignRow = Class.extend({
-		init		: function(e, o, widget) {
+		number		: 0,
+		init		: function(e, o, widget, number) {
 			this.e = j(e);
 			this.o = o;
 			this.widget = widget;
@@ -284,15 +288,24 @@ var LayoutWidget;
 				.append(this.handle);
 			
 			if (this.widget) {
+				if (!this.widget.number) {
+					this.widget.number = u();
+				}
 				this.newOnDrop();
+				this.number = this.widget.number
 			} else {
-				this.e.append('<input name="layouts_design_items[]" type="hidden" value="'+ this.e.attr('id') +'" />');
+				this.e.append('<input name="layouts_design_items[]" type="hidden" value="'+ 
+						this.e.attr('id') +'" />');
 			}
 			
 			if (!this.isDesign()) {
 				this.e.css({'width' : j(o.container).width() });
 			}
-				
+			
+			if (!this.number) {
+				this.number = u();
+			}
+			
 			this.addListeners();
 		},
 		
@@ -325,7 +338,8 @@ var LayoutWidget;
 				.removeClass('layouts_design_item');
 			
 			this.e.find('> .innerWrapper')
-				.after('<input name="layouts_design_items[]" type="hidden" value="'+ this.widget.id +'---'+ u() +'" />')
+				.after('<input name="layouts_design_items[]" type="hidden" value="'+ 
+						this.widget.i() +'" />')
 				.replaceWith( this.widget.element( this.e, this ) );
 			
 		},
@@ -404,6 +418,10 @@ var LayoutWidget;
 			
 			var self = j.extend(true, this, o);
 			LayoutWidgets[self.id] = self;
+		},
+		
+		i		: function() {
+			return this.id +'---'+ this.number;
 		}
 	});
 	
@@ -416,8 +434,16 @@ var LayoutWidget;
 	};
 	
 	var id = 1;
-	function u() {
-		return ++id;
+	function u(v) {
+		var v = (typeof v == 'undefined') ?0 :v*1;
+		
+		if (v > id) {
+			return id = v;
+		} else if  (v) {
+			return v;
+		} else {
+			return ++id;
+		}
 	}
 })(jQuery);
 
@@ -425,8 +451,9 @@ var LayoutWidget;
 // Default Widgets
 new LayoutWidget({
 	id		: 'SingleCell',
+	number	: 0,
 	element		: function(original) {
-		var el = jQuery('<div class="layout_widget_cell"/>');
+		var el = jQuery('<div class="layout_widget_cell layout---'+ this.number +'"/>');
 		return el;
 	},
 	thumbnail	: function(wrapper) {
@@ -436,14 +463,15 @@ new LayoutWidget({
 
 new LayoutWidget({
 	id		: 'DoubleCell',
+	number	: 0,
 	element		: function(original, obj) {
 		var n = 2;
 		var ta = jQuery(obj.o.container).width() - 16;
 		var tr = ta - ((n - 1) * 20);
 		var td = tr / n;
 		
-		var el = jQuery('<div class="layout_widget_cell" style="width:' + td + 'px;margin-right:20px;float:left;"></div>' +
-				'<div style="width:' + td + 'px;float:right;" class="layout_widget_cell"></div>' +
+		var el = jQuery('<div class="layout_widget_cell layout---'+ this.number +'1" style="width:' + td + 'px;margin-right:20px;float:left;"></div>' +
+				'<div class="layout_widget_cell layout---'+ this.number +'2" style="width:' + td + 'px;float:right;"></div>' +
 				'<div style="clear:both;width:100%"></div>');
 		return el;
 	},

@@ -4,7 +4,6 @@
  * @link http://www.redrokk.com
  * @Package Wordpress
  * @SubPackage RedRokk Library
- * @copyright  Copyright (C) 2011+ Redrokk Interactive Media
  * 
  * @version 2.0
  */
@@ -379,10 +378,12 @@ class redrokk_metabox_class
 			$id = $source[$this->_id.'_metaid'];
 		}
 		
+		// if this is a built in metabox
 		if ($this->_type != 'default' 
 		&& (!isset($source[$this->_id.'_image']) || !$source[$this->_id.'_image'])) 
 			return false;
 		
+		// Saving only the specially prefixed items
 		foreach ((array)$source as $property => $new)
 		{
 			//skip everything but the specially prefixed
@@ -400,7 +401,8 @@ class redrokk_metabox_class
     		}
 		}
 		
-		if (!$id && $any) {
+		// maybe there's a last id
+		if (!$id) {
 			if (!$id = get_metadata($type, $post_id, '_metaidlast', true)) {
 				$id = 0;
 			}
@@ -408,19 +410,24 @@ class redrokk_metabox_class
 			update_metadata($type, $post_id, '_metaidlast', $id);
 		}
 		
+		// saving all of the standard items
 		foreach ((array)$source as $property => $new)
 		{
 			//skip special properties that are prefixed with the id
 			if (strpos($property, $this->_id) === 0) continue;
 			
 			$old = get_metadata($type, $post_id, $property, true);
-			if ($new && $new != $old) {
-    			update_metadata($type, $post_id, $property, $new);
-    		}
-    		elseif (!$new) {
-    			delete_metadata($type, $post_id, $property, $old);
-    		}
+			update_metadata($type, $post_id, $property, $new);
+			
+	//		if ($new && $new != $old) {
+    //			update_metadata($type, $post_id, $property, $new);
+    //		}
+    //		elseif (!$new) {
+    //			delete_metadata($type, $post_id, $property, $old);
+    //		}
+    		
 		}
+		
 		return true;
 	}
 	
@@ -483,15 +490,15 @@ class redrokk_metabox_class
 		
 		$fields = array();
 		foreach ((array)$this->_fields as $field) {
-			if (!isset($field['id'])) continue;
+			if (!array_key_exists('id', $field)) continue;
 			$fields[] = $field['id'];
 		}
 		
 		$requests = $_REQUEST;
 		foreach ((array)$requests as $k => $request)
 		{
-			if (($fields && !in_array($k, $fields))
-			|| (in_array($k, $ignores) || strpos($k, 'nounce')!==false))
+			if ((!empty($fields) && !in_array($k, $fields))
+			|| (in_array($k, $ignores) || strpos($k, 'nounce') !== false))
 			{
 				unset($requests[$k]);
 			}
@@ -901,7 +908,8 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 				
 				$id = sanitize_title($id);
 				
-				if (array_key_exists('deleteattachment', $_GET) && $id == $_GET['fileproperty']
+				if (array_key_exists('deleteattachment', $_GET) 
+				&& $id == $_GET['fileproperty']
 				&& $meta == $_GET['deleteattachment'])
 				{
 					wp_delete_attachment( $_GET['deleteattachment'], $force_delete = true );
@@ -909,6 +917,17 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 				}
 			?>
 			<?php switch ($type){ default: ?>
+			<?php if (is_callable($type) && function_exists($type)) : ?>
+			<tr>
+				<th scope="row" style="width: 140px">
+					<label for="<?php echo $id; ?>"><?php echo $name; ?></label>
+				</th>
+				<td>
+					<?php call_user_func($type, $args); ?>
+					<span class="description"><?php echo $desc; ?></span>
+				</td>
+			</tr>
+			<?php break; endif; ?>
 			<?php case 'text': ?>
 			<tr>
 				<th scope="row" style="width: 140px">
@@ -1063,6 +1082,9 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 			<?php case 'select_menu': ?>
 				<?php $options = $type=='select_menu' ?$this->get_options_menus() :$options; ?>
 				
+			<?php case 'select_pages': ?>
+				<?php $options = $type=='select_pages' ?$this->get_options_pages() :$options; ?>
+				
 			<?php case 'select_users': ?>
 				<?php $options = $type=='select_users' ?$this->get_options_users() :$options; ?>
 				
@@ -1107,6 +1129,13 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 						style="visibility:hidden;" />
 				</td>
 			</tr>
+			<?php break; ?>
+			<?php case 'custom': ?>
+			<tr>
+				<td colspan="2">
+					<?php echo $desc.$default; ?>
+				</td>
+			</tr>
 			<?php } ?>
 			<?php endforeach; ?>
 		</table>
@@ -1118,10 +1147,26 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 	/**
 	 * Returns an options list of menus
 	 */
+	function get_options_pages()
+	{
+		// initializing
+		$options = array('0'=>' -- ');
+		$pages = get_pages(array('post_type' => 'page', 'post_status' => 'publish'));
+
+		foreach($pages as $page) {
+			$options[$page->ID] = $page->post_title;
+		}
+
+		return $options;
+	}
+
+	/**
+	 * Returns an options list of menus
+	 */
 	function get_options_menus()
 	{
 		// initializing
-		$options = array();
+		$options = array('0'=>' -- ');
 		$menus = get_terms('nav_menu');
 
 		foreach($menus as $menu) {
@@ -1139,7 +1184,7 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 		// initializing
 		global $wpdb;
 
-		$options = array();
+		$options = array('0'=>' -- ');
 		$query = $wpdb->prepare("SELECT $wpdb->users.ID, $wpdb->users.display_name FROM $wpdb->users");
 		$results = $wpdb->get_results( $query );
 
@@ -1189,7 +1234,7 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 
 		foreach ((array)$roles as $role)
 		{
-			$options[] = $role['name'];
+			$options[strtolower($role['name'])] = $role['name'];
 		}
 
 		return $options;
@@ -1235,7 +1280,7 @@ jQuery('#edit_<?php echo $this->_category_name; ?>_<?php echo $meta_id; ?>').cli
 		foreach ((array)$this->_fields as $field) {
 			$function = create_function('$default','
 				return redrokk_admin_class::getInstance("'.$this->_isAdminPage.'")
-				->getOption("'.$field['id'].'", $default, true);
+					->getOption("'.$field['id'].'", $default, true);
 			');
 			add_filter("pre_option_{$field['id']}", $function, 20, 2);
 		}
