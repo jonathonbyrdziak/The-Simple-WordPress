@@ -376,7 +376,7 @@ class Picasa_Widget extends Empty_Widget_Abstract
 	 * @param array $params
 	 * @param array $sidebar
 	 */
-	function html($widget, $params, $sidebar)
+	function html($widget = array(), $params = array(), $sidebar = array())
 	{
 		$post = redrokk_admin_class::getInstance('picasa-admin')->getPost();
 		$urls = get_post_meta($post->ID, 'picasa_sync');

@@ -36,12 +36,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 */
 
-define( HTMLIZE_VERSION, 1.0 );
-define( HTMLIZE_BASE_TEMPLATE, 'html_email.php' );
-define( HTMLIZE_FOLDER, dirname( plugin_basename( __FILE__ ) ) );
-define( HTMLIZE_PATH, dirname( __FILE__ ) );
-define( HTMLIZE_URL, plugins_url( HTMLIZE_FOLDER ) );
-define( HTMLIZE_TEMPLATE_DIR, HTMLIZE_PATH . '/templates/' );
+define( 'HTMLIZE_VERSION', 1.0 );
+define( 'HTMLIZE_BASE_TEMPLATE', 'html_email.php' );
+define( 'HTMLIZE_FOLDER', dirname( plugin_basename( __FILE__ ) ) );
+define( 'HTMLIZE_PATH', dirname( __FILE__ ) );
+define( 'HTMLIZE_URL', plugins_url( HTMLIZE_FOLDER ) );
+define( 'HTMLIZE_TEMPLATE_DIR', HTMLIZE_PATH . '/templates/' );
 
 require_once('includes/utils.php');
 require_once('includes/emails.php');

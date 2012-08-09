@@ -66,7 +66,7 @@ redrokk_metabox_class::getInstance('website-info', array(
 		),
 	)
 )); 
-
+/*
 redrokk_metabox_class::getInstance('contact-info', array(
 	'title'			=> 'Contact Information',
 	'_object_types'	=> $admin,
@@ -115,7 +115,7 @@ redrokk_metabox_class::getInstance('contact-info', array(
 		),
 	)
 ));
-
+*/
 /**
  * 
  * @params array $column

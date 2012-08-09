@@ -39,7 +39,7 @@ require_once dirname(__file__).DIRECTORY_SEPARATOR.'wp-help'.DIRECTORY_SEPARATOR
 // http://wordpress.org/extend/plugins/related-posts-list-grid-and-slider-all-in-one
 require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Business.php';
 
-require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Employees.php';
-require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Services.php';
+//require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Employees.php';
+//require_once dirname(__file__).DIRECTORY_SEPARATOR.'utilities'.DIRECTORY_SEPARATOR.'_Services.php';
 
 //require_once dirname(__file__).DIRECTORY_SEPARATOR.'marketpress'.DIRECTORY_SEPARATOR.'marketpress.php';
